@@ -1,11 +1,13 @@
-@import 'components/navbar/navbar.scss';
-
-$verde: #00532c;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+a, p, h1, h2, h3, h4, h5 {
+  font-family: 'Montserrat', sans-serif;
 }

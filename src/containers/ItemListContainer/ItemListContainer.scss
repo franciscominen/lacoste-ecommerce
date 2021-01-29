@@ -1,0 +1,20 @@
+$colorSecundario: #2C3330;
+
+.items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12em;
+
+    .logoBig{
+        max-width: 360px;
+    }
+
+    .greeting{
+        font-size: 35px;
+        font-weight: 200;
+        color: $colorSecundario;
+    }
+
+}
