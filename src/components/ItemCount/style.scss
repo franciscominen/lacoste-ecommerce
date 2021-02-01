@@ -1,0 +1,66 @@
+$verdeLacoste: #00532C;
+
+.itemCountContainer {
+    width: 14em;
+    margin: 80px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px 2px rgba(0,0,0,0.33);
+
+    .buttonsCountContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid $verdeLacoste;
+        border-radius: 3px;
+        width: 10em;
+        height: 2.5em;
+        margin-bottom: 15px;
+
+        .buttonCount {
+            height: 40px;
+            width: 40px;
+            color: $verdeLacoste;
+            background-color: transparent;
+            border: none;
+            font-size: 27px;
+            cursor: pointer;
+            transition: .3s;
+            &:hover {
+                color: white;
+                background-color: $verdeLacoste;
+            }
+
+        }
+
+        .count {
+            color: gray;
+            font-weight: 500;
+        }
+    }
+
+    .buttonAddCart {
+        width: 9.4em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px 0;
+        font-size: 17px;
+        color: #2C3330;
+        background-color: transparent;
+        border: 1px solid $verdeLacoste;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .2s;
+        &:hover {
+            background: $verdeLacoste;
+            color: white;
+        }
+        &:hover img {
+            filter: brightness(6.5);
+        }
+    }
+}
