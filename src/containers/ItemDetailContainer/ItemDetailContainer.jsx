@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import './ItemListContainer.scss';
-// import { ItemCountComponent } from '../../components/ItemCount/index';
-import ItemList from "../../components/ItemList";
 import productList from "../../components/mocks/productList";
+import ItemDetail from '../../components/ItemDetail/index'
 
-const ItemListContainer = (props) => {
+const ItemDetailContainer = (props) => {
 
     const [products, setProducts] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
 
     React.useEffect (() => {
         setIsLoading(true);
-        const myPromise = new Promise((resolve, reject) => {
+        const getItems = new Promise((resolve, reject) => {
             setTimeout(() => resolve(productList), 2000); // 2 seg, retrasos de red.
         });
-        myPromise.then((result) => {
+        getItems.then((result) => {
             setProducts(result);
             setIsLoading(false);
         });
@@ -22,16 +20,16 @@ const ItemListContainer = (props) => {
     
     if (isLoading) {
         return <div style={{position:'relative', top:'12em'}}>
-                    <img src="" style={{maxWidth:'300px', margin:'auto', display:'block'}}/>
-                    <h1 style={{textAlign:'center', margin:'0px', fontSize:'18px', fontWeight:'300', color:'gray'}}>Cargando productos</h1>
+                    <img src={"/img/Loaders/loader.gif"} style={{maxWidth:'300px', margin:'auto', display:'block'}}/>
+                    <h1 style={{textAlign:'center', margin:'0px', fontSize:'18px', fontWeight:'300', color:'gray'}}>Cargando producto</h1>
                 </div>;
     };
     
     return (
         <>
-            <ItemList products={products} /> 
+            <ItemDetail /> 
         </>
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

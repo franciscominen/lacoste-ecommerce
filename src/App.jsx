@@ -2,6 +2,9 @@ import './App.scss';
 import ItemCount from './components/ItemCount/index';
 import NavbarComponent from './components/NavBar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
+import  {BrowserRouter, Switch, Route} from 'react-router-dom';
+
 
 const App = () => {
   
@@ -24,7 +27,9 @@ const App = () => {
 
         <NavbarComponent />
 
-        <ItemListContainer greeting={`Bienvenidos a LACOSTE.com`}/>
+        {/* <ItemListContainer/> */}
+
+        <ItemDetailContainer />
 
       </section>
     </>

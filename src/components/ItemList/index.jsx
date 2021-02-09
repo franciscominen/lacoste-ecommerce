@@ -10,6 +10,7 @@ const ItemList = ({products}) => {
             <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
                 {products.map((product) => {
                     return <ItemComponent ket={product.id} product={product}/>
+                    
                 })}
             </div>
 
