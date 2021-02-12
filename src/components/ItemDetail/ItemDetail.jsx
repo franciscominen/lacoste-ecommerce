@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import './style.scss';
-import ItemCountComponent from '../../components/ItemCount/index';
+import ItemCountComponent from '../ItemCount/index';
 
-const ItemDetail = ({detail}) => {
+const ItemDetail = ({ detail }) => {
     
     // ITEM COUNT
     const [contador, setContador] = useState(1); 
@@ -33,15 +33,15 @@ const ItemDetail = ({detail}) => {
             <div className='itemContainer'>
 
                 <div className='imagesContainer'>
-                    <img className='imgAlt' src={"img/Items/buzo-hombre-dorso.webp"} />
-                    <img className='imgMain' src={"img/Items/buzo-hombre.svg"} />
+                    {detail.img}
+                    {detail.imgAlt}
                 </div>
 
                 <div className='detailsContainer'>
 
                     <h1 className='productName'>{detail.name}</h1>
                     <div className='discountColectionContainer' style={{display:'flex'}}>
-                        <p className='productVariants'>10% de descuento</p>
+                        <p className='productVariants'>{detail.discount}</p>
                         <p className='productVariants' style={{background:'gray'}}>Coleccion 2020</p>
                     </div>
 
@@ -79,8 +79,8 @@ const ItemDetail = ({detail}) => {
 
                     <div className='precioEnvioContainer' style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginTop:'5em'}}>
                         <article className='preciosContainer'>
-                            <p className='productPrice'>$ 7.499,00</p>
-                            <p className='productLastPrice'>$ 8.699,00</p>
+                            <p className='productPrice'>{detail.Price}</p>
+                            <p className='productLastPrice'>{detail.lastPrice}</p>
                         </article>
                         <article className='envioContainer' style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
                             <a href="" className='calcularEnvioBtn'>Calcular envio</a>
@@ -100,16 +100,12 @@ const ItemDetail = ({detail}) => {
             <div className='descriptionContainer' >
 
             <h1>Descripcion</h1>
-            <p>REFERENCIA SH5380-21</p>
+            <p>{detail.referencia}</p>
 
             <div style={{display:'flex', justifyContent:'space-between', marginTop:'2em'}}>
                 <article style={{width:'30em'}}>
-                    <h2>Buzo escote redondo de hombre</h2>
-                    <ul>
-                        <li> Estilo rustico con capucha y cierre.</li>
-                        <li> Base principal: algodón 87%, poliester 13%</li>
-                        <li> Base principal: algodón 100% </li>
-                    </ul>
+                    <h2>{detail.name}</h2>
+                    {detail.descripcion}
                 </article>
 
                 <article style={{width:'30em', margin:'0 40px'}}>

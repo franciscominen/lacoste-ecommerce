@@ -1,6 +1,6 @@
 import './App.scss';
 import ItemCount from './components/ItemCount/index';
-import NavbarComponent from './components/NavBar';
+import NavbarComponent from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer/ItemDetailContainer';
 import  {BrowserRouter, Switch, Route} from 'react-router-dom';
