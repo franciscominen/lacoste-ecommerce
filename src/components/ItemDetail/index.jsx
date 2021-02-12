@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './style.scss';
 import ItemCountComponent from '../../components/ItemCount/index';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({detail}) => {
     
     // ITEM COUNT
     const [contador, setContador] = useState(1); 
@@ -39,7 +39,7 @@ const ItemDetail = ({item}) => {
 
                 <div className='detailsContainer'>
 
-                    <h1 className='productName'>Buzo de hombre con capucha rustico</h1>
+                    <h1 className='productName'>{detail.name}</h1>
                     <div className='discountColectionContainer' style={{display:'flex'}}>
                         <p className='productVariants'>10% de descuento</p>
                         <p className='productVariants' style={{background:'gray'}}>Coleccion 2020</p>

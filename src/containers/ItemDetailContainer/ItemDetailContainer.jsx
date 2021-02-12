@@ -1,21 +1,25 @@
 import React, { useState } from "react";
-import productList from "../../components/mocks/productList";
-import ItemDetail from '../../components/ItemDetail/index'
+import productDetailData from "../../components/mocks/productDetailData";
+import DetailList from "../../components/ItemDetail/DetailList";
 
 const ItemDetailContainer = (props) => {
 
-    const [products, setProducts] = React.useState([]);
+    const [details, setDetails] = React.useState([]);
     const [isLoading, setIsLoading] = React.useState(false);
 
     React.useEffect (() => {
+
         setIsLoading(true);
+
         const getItems = new Promise((resolve, reject) => {
-            setTimeout(() => resolve(productList), 2000); // 2 seg, retrasos de red.
+            setTimeout(() => resolve(productDetailData), 2000); // 2 seg, retrasos de red.
         });
+
         getItems.then((result) => {
-            setProducts(result);
+            setDetails(result);
             setIsLoading(false);
         });
+
     }, []);
     
     if (isLoading) {
@@ -27,7 +31,7 @@ const ItemDetailContainer = (props) => {
     
     return (
         <>
-            <ItemDetail /> 
+            <DetailList details={details} /> 
         </>
     )
 }

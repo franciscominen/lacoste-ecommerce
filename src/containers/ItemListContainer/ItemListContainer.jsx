@@ -11,10 +11,10 @@ const ItemListContainer = (props) => {
 
     React.useEffect (() => {
         setIsLoading(true);
-        const myPromise = new Promise((resolve, reject) => {
+        const verCatalogoItems = new Promise((resolve, reject) => {
             setTimeout(() => resolve(productList), 2000); // 2 seg, retrasos de red.
         });
-        myPromise.then((result) => {
+        verCatalogoItems.then((result) => {
             setProducts(result);
             setIsLoading(false);
         });

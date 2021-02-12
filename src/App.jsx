@@ -27,7 +27,7 @@ const App = () => {
 
         <NavbarComponent />
 
-        {/* <ItemListContainer/> */}
+        <ItemListContainer/>
 
         <ItemDetailContainer />
 
