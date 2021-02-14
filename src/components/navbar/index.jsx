@@ -2,32 +2,33 @@ import styles from "./navbar.module.scss";
 import SearchIcon from "@material-ui/icons/Search";
 import Divider from "@material-ui/core/Divider";
 import CartWidgetComponent from "../CartWidget/index";
+import { Link } from "react-router-dom";
 
 const NavbarComponent = () => {
   return (
     <>
       <nav>
-        
-        <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'200px'}}/>
+
+        <Link to={'/'}> <img src={"img/Navbar/LogoNav.svg"} style={{maxWidth:'200px'}}/> </Link>
       
         <ul className={styles.categorias}>
           <li>
-            <a href="" className={styles.categoria}>Novedades</a>
+            <Link to={`/product`} className={styles.categoria}> Novedades </Link>
           </li>
           <li>
-            <a href="" className={styles.categoria}>Mujer</a>
+            <Link to={`/product`} className={styles.categoria}> Mujer </Link>
           </li>
           <li>
-            <a href="" className={styles.categoria}>Hombre</a>
+            <Link to={`/product`} className={styles.categoria}> Hombre </Link>
           </li>
           <li>
-            <a href="" className={styles.categoria}>Niños</a>
+            <Link to={`/product`} className={styles.categoria}> Niños </Link>
           </li>
           <li>
-            <a href="" className={styles.categoria} style={{color:'red'}}>SALE</a>
+            <Link to={`/product`} className={styles.categoria} style={{color:'red'}}> SALE </Link>
           </li>
           <li>
-              <SearchIcon className={styles.searchIcon}/>
+            <SearchIcon />
           </li>
         </ul>
 
@@ -35,12 +36,12 @@ const NavbarComponent = () => {
           <li>
             <CartWidgetComponent/>
           </li>
-          <Divider orientation="vertical" flexItem />
+          <Divider orientation="vertical"/>
           <li>
-            <img src={"/img/Navbar/MapIcon.svg"} style={{maxWidth:'30px', margin:'5px 10px 0'}} />
+            <img src={"img/Navbar/MapIcon.svg"} style={{maxWidth:'30px', margin:'5px 10px 0'}} />
           </li>
           <li>
-            <img src={"/img/Navbar/LoginIcon.svg"} style={{maxWidth:'40px', margin:'5px 0 0'}} />
+            <img src={"img/Navbar/LoginIcon.svg"} style={{maxWidth:'40px', margin:'5px 0 0'}} />
           </li>
         </ul>
 

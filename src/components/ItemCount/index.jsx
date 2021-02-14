@@ -1,25 +1,34 @@
-import './style.scss';
+import React, { useState } from "react";
 
-const ItemCountComponent = ({stock, onAdd, contador, onSubstract, addCart}) => {
-    return (
-        <>
-            <div className='itemCountContainer'>
-                <div style={{display:'flex', justifyContent:'space-between'}}>
-                    <div className='buttonsCountContainer'>
-                        <button className='buttonCount' style={{borderRight:'1px solid #00532C', borderRadius:'3px 0 0 3px'}} onClick={onSubstract} >-</button>
-                        <p className='count'>{contador}</p>
-                        <button className='buttonCount' style={{borderLeft:'1px solid #00532C', borderRadius:'0 3px 3px 0'}} onClick={() => { onAdd(stock) }} >+</button> 
-                    </div>
+const ItemCount = ({ onAdd }) => {
+  console.log(onAdd);
+  const [contador, setContador] = useState(1);
 
-                    <p style={{fontSize:'13px', marginTop:'15px', color:'gray'}}>En stock: {stock}</p>
-                </div>
-            
-                <button onClick={addCart} className='buttonAddCart'>    
-                    Agregar <img src={"/img/CartWidget/CartIcon.svg"} style={{maxWidth:'40px', margin:'0 0 5px 5px'}} /> 
-                </button> 
-            </div>
-        </>
-    );
+  const incrementar = () => {
+    let max = 10;
+    if (contador < max) {
+      setContador(contador + 1);
+    }
+  };
+
+  const decrementar = () => {
+    let min = 1;
+    if (contador > min) {
+      setContador(contador - 1);
+    }
+  };
+  const handlerOnAdd = () => {
+    onAdd(contador);
+  };
+
+  return (
+    <div style={{ width: "100%", height: "100vw" }}>
+      <button onClick={decrementar}>-</button>
+      <span>{contador}</span>
+      <button onClick={incrementar}>+</button>
+      <br />
+      <button onClick={handlerOnAdd}>Agregar al carrito</button>
+    </div>
+  );
 };
-
-export default ItemCountComponent
+export default ItemCount;

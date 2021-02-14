@@ -1,30 +1,29 @@
-import React from 'react';
-import './item.scss';
+import React, { useState, useEffect } from "react";
+import "./item.scss"
+import { Link } from "react-router-dom";
 
-const ItemComponent = ({product}) => {
-    return (
-        <div className='itemCard'>
+export const ItemComponent = ({ item }) => {
+  return (
+    <div className='itemCard'>
 
-            {product.img}
+            {item.img}
 
             <div className='itemDescription'>
                 <div className='discountContainer'>
-                    <p className='productVariants'>{product.discount}</p>
-                    <p className='productVariants' style={{background:'gray'}}>{product.coleccion}</p>
-                    <p className='productVariants' style={{background:'#496ABE'}}>{product.color}</p>
+                    <p className='productVariants'>{item.discount}</p>
+                    <p className='productVariants' style={{background:'gray'}}>{item.coleccion}</p>
+                    <p className='productVariants' style={{background:'#496ABE'}}>{item.color}</p>
                 </div>
                 
-                <h3 className='productName'>{product.name}</h3>
-                <p className='productPrice'>$ {product.price}</p>
-                <p className='productLastPrice'>$ {product.lastPrice}</p>
-                <p className='stockActual'>Stock actual: {product.stock}</p>
+                <h3 className='productName'>{item.name}</h3>
+                <p className='productPrice'>$ {item.price}</p>
+                <p className='productLastPrice'>$ {item.lastPrice}</p>
+                <p className='stockActual'>Stock actual: {item.stock}</p>
                 
             </div>
 
-            <a href="" className='BtnVerDetalle'>Ver detalle</a>
+            <Link to={`/product/${item.id}`} className='BtnVerDetalle'> Ver detalle </Link>
 
         </div>
-    )
-}
-
-export default ItemComponent 
+  );
+};

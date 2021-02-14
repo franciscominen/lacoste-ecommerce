@@ -1,19 +1,14 @@
-import React from 'react'
-import ItemComponent from '../Item'
+import React, { useState, useEffect } from "react";
+import {ItemComponent} from "../Item/index";
 
-const ItemList = ({products}) => {
-    return (
-        <>
-            <h1 style={{margin:'45px', textAlign:'center', fontSize:'45px', fontWeight:'300', color:'gray'}}>Novedades</h1>
+export const ItemList = ({ items }) => {
+  console.log(items);
 
-            <div style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
-                {products.map((product) => {
-                    return <ItemComponent key={product.id} product={product}/>
-                    
-                })}
-            </div>
-        </>
-    )
-}
-
-export default ItemList;
+  return (
+    <>
+      {items.map((item) => (
+        <ItemComponent key={item.id} item={item} />
+      ))}
+    </>
+  );
+};
