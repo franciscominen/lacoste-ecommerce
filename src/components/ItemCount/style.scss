@@ -1,59 +1,52 @@
 $verdeLacoste: #00532C;
 
-.itemCountContainer {
-    width: 16em;
+.buttonsCountContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
 
-    .buttonsCountContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .stockBtn {
+        padding: 5px 10px;
+        font-size: 16px;
+        font-weight: 700;
+        background: white;
+        color: $verdeLacoste;
         border: 1px solid $verdeLacoste;
-        border-radius: 3px;
-        width: 8.3em;
-        height: 2.5em;
-        margin-bottom: 5px;
-
-        .buttonCount {
-            height: 40px;
-            width: 40px;
-            color: $verdeLacoste;
-            background-color: transparent;
-            border: none;
-            font-size: 27px;
-            cursor: pointer;
-            transition: .3s;
-            &:hover {
-                color: white;
-                background-color: $verdeLacoste;
-            }
-
-        }
-
-        .count {
-            color: gray;
-            font-weight: 500;
-        }
-    }
-
-    .buttonAddCart {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 6px 0;
-        font-size: 17px;
-        color: #2C3330;
-        background-color: transparent;
-        border: 1px solid $verdeLacoste;
-        border-radius: 3px;
+        border-radius: 4px;
         cursor: pointer;
         transition: .2s;
         &:hover {
-            background: $verdeLacoste;
             color: white;
+            background: $verdeLacoste;
         }
-        &:hover img {
-            filter: brightness(6.5);
-        }
+    }
+
+    p {
+        color: gray;
+        font-weight: 700;
+    }
+
+}
+
+.onAddBtn {
+    background: white;
+    border: 1px solid $verdeLacoste;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 15px;
+    font-size: 17px;
+    color: gray;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+    &:hover {
+        color: white;
+        background: $verdeLacoste;
+    }
+    &:hover img {
+        filter: brightness(7);
     }
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import itemsPromise from "../../components/mocks/productList";
+import itemsPromise from "../components/mocks/productList";
 /* import ItemCount from "../ItemCount"; */
-import { ItemList } from "../../components/ItemList/index";
+import { ItemList } from "../components/ItemList/index";
 
 export default function ItemListContainer() {
   console.log(itemsPromise);

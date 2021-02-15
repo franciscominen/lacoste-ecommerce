@@ -2,8 +2,8 @@ const getItemsList = (id) => {
     return [
         {   id: 1,
             name: "Remera lisa con cuello diferenciado",  
-            img: <img src={"/img/Items/remera-lisa.svg"} style={{maxWidth:'350px'}}/>,
-            imgAlt: <img src={"img/Items/remera-lisa'dorso.svg"} />,  
+            img: <img src={"/img/Items/remera-lisa.svg"} className="imgMain" style={{maxWidth:'300px'}} />,
+            imgAlt: <img src={"/img/Items/remera-lisa-dorso.svg"} className="imgAlt" />,  
             discount:"25% de descuento", 
             price: '3.499,00', 
             lastPrice: '5.699,00', 
@@ -28,8 +28,8 @@ const getItemsList = (id) => {
         },
         {   id: 2,
             name: "Buzo de hombre con capucha rustico",  
-            img:<img src={"/img/Items/buzo-hombre.svg"} style={{maxWidth:'350px'}}/>, 
-            imgAlt: <img src={"img/Items/buzo-hombre-dorso.webp"} />,  
+            img:<img src={"/img/Items/buzo-hombre.svg"} className="imgMain" style={{maxWidth:'300px'}}/>, 
+            imgAlt: <img src={"/img/Items/buzo-hombre-dorso.webp"} className="imgAlt"/>,  
             discount:"10% de descuento", 
             price: '7.499,00', 
             lastPrice: '8.699,00', 
@@ -54,8 +54,8 @@ const getItemsList = (id) => {
         { 
             id: 3, 
             name: "Vestido Polo De Mujer En Piqué De Algodón Con Cinturón", 
-            img:<img src={"/img/Items/vestido-mujer.svg"} style={{maxWidth:'350px'}}/>,
-            imgAlt: <img src={"/img/Items/vestido-mujer-alt.svg"} />,  
+            img: <img src={"/img/Items/vestidoMujer.png"} className="imgMain" style={{maxWidth:'300px'}}/>,
+            imgAlt: <img src={"/img/Items/vestido-mujer-alt.svg"} className="imgAlt" />,  
             discount:"35% de descuento", 
             price: '8.449,00', 
             lastPrice: '12.999,00', 
@@ -77,8 +77,8 @@ const getItemsList = (id) => {
         { 
             id: 4, 
             name: "Zapatillas de hombre G80 OG", 
-            img:<img src={"/img/Items/zapatillas-hombre.svg"} style={{maxWidth:'350px'}}/>,
-            imgAlt: <img src={"img/Items/zapatillas-alt"} />,   
+            img:<img src={"/img/Items/zapatillas-hombre.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
+            imgAlt: <img src={"/img/Items/zapatillas-alt.png"} className="imgAlt" />,   
             discount:"35% de descuento", 
             price: '8.499,00', 
             lastPrice: '12.999,00', 
@@ -104,21 +104,10 @@ const getItemsList = (id) => {
         }
     ];
 };
-const getItemList = () => {
-  return [
-    { id: "1", title: "gorra", img: "https://i.ibb.co/8MQpStr/gorraq.jpg" }
-  ];
-};
 
 const itemsPromise = new Promise((rej, res) => {
   setTimeout(() => {
     rej(getItemsList("1"));
-  }, 2000);
-});
-
-export const itemPromise = new Promise((rej, res) => {
-  setTimeout(() => {
-    rej(getItemList());
   }, 2000);
 });
 

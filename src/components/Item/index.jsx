@@ -7,7 +7,7 @@ export const ItemComponent = ({ item }) => {
     <div className='itemCard'>
 
             {item.img}
-
+            
             <div className='itemDescription'>
                 <div className='discountContainer'>
                     <p className='productVariants'>{item.discount}</p>

@@ -10,6 +10,9 @@ $negroLacoste: #2C3330;
     .imagesContainer {
         width: 43em;
 
+        .imgMain {
+            max-width: 500px!important;
+        }
         .imgAlt {
             max-width: 70px;
             border: 1px solid gray;
