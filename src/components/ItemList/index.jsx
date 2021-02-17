@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {ItemComponent} from "../Item/index";
+import {ItemCard} from "../ItemCard/ItemCard";
 
 export const ItemList = ({ items }) => {
   console.log(items);
@@ -7,7 +7,9 @@ export const ItemList = ({ items }) => {
   return (
     <>
       {items.map((item) => (
-        <ItemComponent key={item.id} item={item} />
+        
+        <ItemCard key={item.id} item={item} />
+        
       ))}
     </>
   );

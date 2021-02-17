@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./item.scss"
+import "./style.scss"
 import { Link } from "react-router-dom";
 
-export const ItemComponent = ({ item }) => {
+export const ItemCard = ({ item }) => {
   return (
     <div className='itemCard'>
 

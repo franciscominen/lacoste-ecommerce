@@ -9,7 +9,7 @@ const NavbarComponent = () => {
     <>
       <nav>
 
-        <Link to={'/'}> <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'200px'}}/> </Link>
+        <Link to={'/'}> <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'150px'}}/> </Link>
       
         <ul className={styles.categorias}>
           <li>

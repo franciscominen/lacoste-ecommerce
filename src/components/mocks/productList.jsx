@@ -54,7 +54,7 @@ const getItemsList = (id) => {
         { 
             id: 3, 
             name: "Vestido Polo De Mujer En Piqué De Algodón Con Cinturón", 
-            img: <img src={"/img/Items/vestidoMujer.png"} className="imgMain" style={{maxWidth:'300px'}}/>,
+            img: <img src={"/img/Items/vestido-mujer.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
             imgAlt: <img src={"/img/Items/vestido-mujer-alt.svg"} className="imgAlt" />,  
             discount:"35% de descuento", 
             price: '8.449,00', 
@@ -105,10 +105,10 @@ const getItemsList = (id) => {
     ];
 };
 
-const itemsPromise = new Promise((rej, res) => {
+const itemPromise = new Promise((rej, res) => {
   setTimeout(() => {
     rej(getItemsList("1"));
   }, 2000);
 });
 
-export default itemsPromise;
+export default itemPromise;
