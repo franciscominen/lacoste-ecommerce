@@ -34,9 +34,9 @@ const NavbarComponent = () => {
 
         <ul className={styles.cartLogin}>
           <li>
-            <CartWidgetComponent/>
+            <Link to={`/cart`}><CartWidgetComponent/></Link>
           </li>
-          <Divider orientation="vertical"/>
+          
           <li>
             <img src={"/img/Navbar/MapIcon.svg"} style={{maxWidth:'30px', margin:'5px 10px 0'}} />
           </li>

@@ -9,7 +9,23 @@ const getItemsList = (id) => {
             lastPrice: '5.699,00', 
             stock: 27, 
             coleccion:'Coleccion 2020', 
-            color:'+3 colores',
+            color:'+6 colores',
+            colorSeleccionado: 
+                <div className='colorActual' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Color:</p> <figure className='colorFigure' style={{background:'#E5E5E5'}}></figure> <p>Gris</p>
+                </div> ,
+            colorVariantes:
+                <div className='colorVariantes' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Colores: </p>
+                    <ul style={{display:'flex'}}>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#EEEFBE'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#00532C'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#2D4582'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#CC2229'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#2C3330'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#FFCDE5'}}></figure></a></li>
+                    </ul>
+                </div>,
             referencia: <p>REFERENCIA TH4981-21</p>,
             descripcion: <ul>
                             <li> Acabados acanalados en los extremos de las mangas y la cintura.</li>
@@ -35,7 +51,20 @@ const getItemsList = (id) => {
             lastPrice: '8.699,00', 
             stock: 8, 
             coleccion:'Coleccion 2020', 
-            color:'+2 colores',
+            color:'+3 colores',
+            colorSeleccionado: 
+                <div className='colorActual' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Color:</p> <figure className='colorFigure'></figure> <p>Negro</p>
+                </div> ,
+            colorVariantes:
+                <div className='colorVariantes' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Colores: </p>
+                    <ul style={{display:'flex'}}>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#EEEFBE'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#00532C'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#2D4582'}}></figure></a></li>
+                    </ul>
+                </div>,
             referencia: <p>REFERENCIA SH5380-21</p>,
             descripcion: <ul>
                             <li> Estilo rustico con capucha y cierre.</li>
@@ -61,12 +90,25 @@ const getItemsList = (id) => {
             lastPrice: '12.999,00', 
             stock: 11, 
             coleccion:'Nueva coleccion', 
-            color:'+1 color',
+            color:'+2 colores',
+            colorSeleccionado: 
+                <div className='colorActual' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Color:</p> <figure className='colorFigure' style={{background:'#2D4582'}}></figure> <p> Azul Marino </p>
+                </div> ,
+            colorVariantes:
+                <div className='colorVariantes' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Colores: </p>
+                    <ul style={{display:'flex'}}>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#EEEFBE'}}></figure></a></li>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#00532C'}}></figure></a></li>
+                    </ul>
+                </div>,
             referencia: <p>REFERENCIA EF5471-21</p>,
-            descripcion: <ul>
-                <li> Estilo rustico con capucha y cierre.</li>
-                <li> Acabados acanalados en los puños y en la cintura</li>
-                <li> Cocodrilo verde bordado en el pecho </li>
+            descripcion: 
+                <ul>
+                    <li> Estilo rustico con capucha y cierre.</li>
+                    <li> Acabados acanalados en los puños y en la cintura</li>
+                    <li> Cocodrilo verde bordado en el pecho </li>
                 </ul>,
             tallas: <ul style={{display:'flex', alignItems:'center'}}>
                         <li>S</li>
@@ -85,6 +127,17 @@ const getItemsList = (id) => {
             stock: 7, 
             coleccion:'Nueva coleccion', 
             color:'+1 color',
+            colorSeleccionado: 
+                <div className='colorActual' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Color:</p> <figure className='colorFigure' style={{background:'#FFFFF4'}}></figure> <p> Blanco </p>
+                </div> ,
+            colorVariantes:
+                <div className='colorVariantes' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Colores: </p>
+                    <ul style={{display:'flex'}}>
+                        <li><a href=""><figure className='colorFigure' style={{background:'#2D4582'}}></figure></a></li>
+                    </ul>
+                </div>,
             referencia: <p>REFERENCIA 39SMA0085</p>,
             descripcion: <ul>
                             <li> Parte superior de cuero y textil.</li>

@@ -1,7 +1,26 @@
 import React, { useState } from "react";
 import './style.scss';
 
-const ItemCount = ({ stock, decrementar, incrementar, onAdd, contador }) => {
+const ItemCount = ({ onAdd, stock  }) => {
+
+  console.log(onAdd);
+  const [contador, setContador] = useState(1);
+
+  const incrementar = () => {
+    if (contador < stock) {
+      setContador(contador + 1);
+    }
+  };
+
+  const decrementar = () => {
+    if (contador > 1) {
+      setContador(contador - 1);
+    }
+  };
+  const handlerOnAdd = () => {
+    onAdd(contador);
+  };
+
   return (
     <>
     <div>
@@ -10,7 +29,7 @@ const ItemCount = ({ stock, decrementar, incrementar, onAdd, contador }) => {
         <p>{contador}</p>
         <button onClick={() => {incrementar(stock)}} className="stockBtn"> + </button>
       </div>
-      <button onClick={onAdd} className="onAddBtn">
+      <button onClick={handlerOnAdd} className="onAddBtn">
         Agregar <img src={"/img/CartWidget/CartIcon.svg"} style={{maxWidth:'40px', marginLeft:'10px'}}/>
       </button>
     </div>
