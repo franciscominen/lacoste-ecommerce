@@ -30,7 +30,7 @@ const ItemCount = ({ onAdd, stock  }) => {
         <button onClick={() => {incrementar(stock)}} className="stockBtn"> + </button>
       </div>
       <button onClick={handlerOnAdd} className="onAddBtn">
-        Agregar <img src={"/img/CartWidget/CartIcon.svg"} style={{maxWidth:'40px', marginLeft:'10px'}}/>
+        Agregar <img src={"/img/CartWidget/CartIconAlt.svg"} style={{maxWidth:'35px', marginLeft:'10px'}}/>
       </button>
     </div>
     </>

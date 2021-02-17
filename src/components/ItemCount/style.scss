@@ -38,7 +38,7 @@ $verdeLacoste: #00532C;
     align-items: center;
     padding: 7px 15px;
     font-size: 17px;
-    color: gray;
+    color: $verdeLacoste;
     font-weight: 500;
     cursor: pointer;
     transition: .2s;
@@ -47,6 +47,6 @@ $verdeLacoste: #00532C;
         background: $verdeLacoste;
     }
     &:hover img {
-        filter: brightness(7);
+        filter: brightness(11) grayscale(1) contrast(5);
     }
 }
