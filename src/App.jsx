@@ -5,6 +5,7 @@ import ItemDetailContainer from './containers/ItemDetailContainer';
 import CartContainer from './containers/CartContainer'; 
 import  {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { GlobalProvider } from './context/GlobalContext';
+import CategoryContainer from './containers/CategoryContainer';
 
 const App = () => {
   
@@ -19,7 +20,7 @@ const App = () => {
             <Route exact component={ItemListContainer} path="/" />
 
             <Route path="/category/:categoriaId">
-              <ItemListContainer />
+              <CategoryContainer />
             </Route>
 
             <Route exact component={ItemDetailContainer} path="/product/:id" />

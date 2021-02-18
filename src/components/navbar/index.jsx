@@ -2,7 +2,6 @@ import "./styles.scss";
 import SearchIcon from "@material-ui/icons/Search";
 import CartWidgetComponent from "../CartWidget/index";
 import { NavLink } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
 const NavbarComponent = ({item}) => {
 
@@ -14,19 +13,19 @@ const NavbarComponent = ({item}) => {
       
         <ul className='categorias'>
           <li>
-            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Novedades </NavLink>
+            <NavLink to={`/category/${'novedades'}`} activeClassName='categoriaActive' className='categoria'> Novedades </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/`} activeClassName='categoriaActive'  className='categoria'> Mujer </NavLink>
+            <NavLink to={`/category/${'mujer'}`} activeClassName='categoriaActive'  className='categoria'> Mujer </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Hombre </NavLink>
+            <NavLink to={`/category/${'hombre'}`} activeClassName='categoriaActive' className='categoria'> Hombre </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Niños </NavLink>
+            <NavLink to={`/category/${'kids'}`} activeClassName='categoriaActive' className='categoria'> Niños </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
+            <NavLink to={`/category/${'sale'}`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
           </li>
           <li>
             <SearchIcon style={{color:'gray'}}/>

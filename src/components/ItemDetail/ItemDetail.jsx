@@ -69,7 +69,7 @@ const ItemDetail = ({ item }) => {
                     <ItemCount stock={item.stock} onAdd={onAdd} />
                     }
                     
-                    <div>
+                    <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
                         <p style={{color:'gray', fontSize:'14px'}}>Stock: {item.stock}</p>
                         <a href="" className='descriptionBtn'>Ver descripcion</a>
                     </div>

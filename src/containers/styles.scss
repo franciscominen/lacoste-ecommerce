@@ -1,0 +1,22 @@
+$verdeLacoste: #00532c;
+
+.tittleContainer {
+    margin: 3em 2em 3em 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .volverCatalogoBtn {
+        padding: 10px;
+        border: 1px solid $verdeLacoste;
+        border-radius: 5px;
+        color: $verdeLacoste;
+        font-size: 14px;
+        font-weight: 600;
+        transition: .2s;
+        &:hover {
+            color: white;
+            background: $verdeLacoste;
+        }
+    }
+}

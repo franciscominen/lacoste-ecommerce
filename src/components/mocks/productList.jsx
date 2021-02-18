@@ -120,7 +120,7 @@ const getItemsList = (id) => {
                     </ul>
         },
         { 
-            id: 1,
+            id: 4,
             categoriaId: 'novedades', 
             name: "Zapatillas de hombre G80 OG", 
             img:<img src={"/img/Items/zapatillas-hombre.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
@@ -157,6 +157,43 @@ const getItemsList = (id) => {
                         <li>42</li>
                         <li>43</li>
                         <li>44</li>
+                    </ul>
+        },
+        { 
+            id: 5,
+            categoriaId: 'kids', 
+            name: "Camisa De Niños De Poplin A Cuadros Manga Larga", 
+            img:<img src={"/img/Items/camisa-ninio.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
+            imgAlt: <img src={"/img/Items/camisa-ninio-alt.svg"} className="imgAlt" />,   
+            discount:"5% de descuento", 
+            price: '5.200,00', 
+            lastPrice: '6.199,00', 
+            stock: 16, 
+            coleccion: 2020, 
+            color:'+1 color',
+            colorSeleccionado: 
+                <div className='colorActual' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Color:</p> <figure className='colorFigure' style={{background:'linear-gradient(90deg, rgba(254,31,31,1) 0%, rgba(4,15,94,1) 100%)'}}></figure> <p style={{fontSize:'12px', marginLeft:'10px'}}> Azul Marino / Rojo </p>
+                </div> ,
+            colorVariantes:
+                <div className='colorVariantes' style={{display:'flex', alignItems:'center'}}>
+                    <p style={{marginRight:'10px'}}>Colores: </p>
+                    <ul style={{display:'flex'}}>
+                        <li>
+                            <figure className='colorFigure' style={{background:'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(5,25,166,1) 38%, rgba(25,43,173,1) 64%, rgba(255,255,255,1) 100%)'}}></figure>
+                        </li>
+                    </ul>
+                </div>,
+            referencia: <p>REFERENCIA CJ3388-21</p>,
+            descripcion: <ul>
+                            <li> - Forma relajada. </li>
+                            <li> - Cocodrilo de silicona en el pecho.</li>
+                        </ul>,
+            tallas: <ul style={{display:'flex', alignItems:'center'}}>
+                        <li>4 </li>
+                        <li>6 </li>
+                        <li>10 </li>
+                        <li>12 </li>
                     </ul>
         }
     ];
