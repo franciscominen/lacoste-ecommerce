@@ -6,11 +6,10 @@ import ItemDetail from "../components/ItemDetail/ItemDetail";
 const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const { id } = useParams();
-  console.log(id);
 
   useEffect(() => {
     itemPromise.then((resp) => {
-      setItem(resp.find((li) => li.id === parseInt(id)))  // la promise 'itemPromise' retorna el itemDetail unicamente del objeto cuyo id es igual a 2. 
+      setItem(resp.find((li) => li.id === parseInt(id)))
     });
   }, []);
   

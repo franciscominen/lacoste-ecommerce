@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import itemsPromise from "../components/mocks/productList";
-/* import ItemCount from "../ItemCount"; */
+import { useParams } from "react-router-dom";
+import itemPromise from "../components/mocks/productList";
 import { ItemList } from "../components/ItemList/index";
 import FadeIn from 'react-fade-in';
 
 export default function ItemListContainer() {
-  console.log(itemsPromise);
+  const { categoryId } = useParams();
   const [prod, setProd] = useState([]);
 
   useEffect(() => {
-    itemsPromise.then((res) => setProd(res));
-  }, []);
+    itemPromise.then((res) => setProd(res));
+  }, [categoryId]);
 
   return (
     <>

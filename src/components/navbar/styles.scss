@@ -31,11 +31,18 @@ nav {
                 color: gray;
                 padding-bottom: 5px;
                 border-bottom: 2px solid transparent;
-                transition: .3s;
+                transition: .2s;
                 &:hover {
                     border-bottom: 2px solid $verdeLacoste;
                     border-radius: 1px;
                 }
+            }
+
+            .categoriaActive {
+                transition: .2s;
+                border-bottom: 2px solid $verdeLacoste;
+                color: $verdeLacoste;
+                font-weight: 600;
             }
 
             .searchIcon {

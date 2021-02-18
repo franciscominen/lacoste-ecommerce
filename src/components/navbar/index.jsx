@@ -1,40 +1,41 @@
-import styles from "./navbar.module.scss";
+import "./styles.scss";
 import SearchIcon from "@material-ui/icons/Search";
-import Divider from "@material-ui/core/Divider";
 import CartWidgetComponent from "../CartWidget/index";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const NavbarComponent = () => {
+const NavbarComponent = ({item}) => {
+
   return (
     <>
       <nav>
 
-        <Link to={'/'}> <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'150px'}}/> </Link>
+        <NavLink to={'/'}> <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'150px'}}/> </NavLink>
       
-        <ul className={styles.categorias}>
+        <ul className='categorias'>
           <li>
-            <Link to={`/product/:categoryId`} className={styles.categoria}> Novedades </Link>
+            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Novedades </NavLink>
           </li>
           <li>
-            <Link to={`/product/:categoryId`} className={styles.categoria}> Mujer </Link>
+            <NavLink to={`/category/`} activeClassName='categoriaActive'  className='categoria'> Mujer </NavLink>
           </li>
           <li>
-            <Link to={`/product/:categoryId`} className={styles.categoria}> Hombre </Link>
+            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Hombre </NavLink>
           </li>
           <li>
-            <Link to={`/product/:categoryId`} className={styles.categoria}> Niños </Link>
+            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria'> Niños </NavLink>
           </li>
           <li>
-            <Link to={`/product/:categoryId`} className={styles.categoria} style={{color:'red'}}> SALE </Link>
+            <NavLink to={`/category/`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
           </li>
           <li>
-            <SearchIcon />
+            <SearchIcon style={{color:'gray'}}/>
           </li>
         </ul>
 
-        <ul className={styles.cartLogin}>
+        <ul className='cartLogin'>
           <li>
-            <Link to={`/cart`}><CartWidgetComponent/></Link>
+            <NavLink to={`/cart`}><CartWidgetComponent/></NavLink>
           </li>
           
           <li>

@@ -1,6 +1,7 @@
 const getItemsList = (id) => {
     return [
         {   id: 1,
+            categoriaId: 'sale',
             name: "Remera lisa con cuello diferenciado",  
             img: <img src={"/img/Items/remera-lisa.svg"} className="imgMain" style={{maxWidth:'300px'}} />,
             imgAlt: <img src={"/img/Items/remera-lisa-dorso.svg"} className="imgAlt" />,  
@@ -43,6 +44,7 @@ const getItemsList = (id) => {
         
         },
         {   id: 2,
+            categoriaId: 'hombre',
             name: "Buzo de hombre con capucha rustico",  
             img:<img src={"/img/Items/buzo-hombre.svg"} className="imgMain" style={{maxWidth:'300px'}}/>, 
             imgAlt: <img src={"/img/Items/buzo-hombre-dorso.webp"} className="imgAlt"/>,  
@@ -81,7 +83,8 @@ const getItemsList = (id) => {
                     </ul>
         },     
         { 
-            id: 3, 
+            id: 3,
+            categoriaId: 'mujer', 
             name: "Vestido Polo De Mujer En Piqué De Algodón Con Cinturón", 
             img: <img src={"/img/Items/vestido-mujer.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
             imgAlt: <img src={"/img/Items/vestido-mujer-alt.svg"} className="imgAlt" />,  
@@ -117,7 +120,8 @@ const getItemsList = (id) => {
                     </ul>
         },
         { 
-            id: 4, 
+            id: 1,
+            categoriaId: 'novedades', 
             name: "Zapatillas de hombre G80 OG", 
             img:<img src={"/img/Items/zapatillas-hombre.svg"} className="imgMain" style={{maxWidth:'300px'}}/>,
             imgAlt: <img src={"/img/Items/zapatillas-alt.png"} className="imgAlt" />,   
@@ -160,7 +164,7 @@ const getItemsList = (id) => {
 
 const itemPromise = new Promise((rej, res) => {
   setTimeout(() => {
-    rej(getItemsList("1"));
+    rej(getItemsList());
   }, 2000);
 });
 
