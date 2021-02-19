@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './styles.scss'
 import { useParams } from "react-router-dom";
 import itemPromise from "../components/mocks/productList";
 import ItemDetail from "../components/ItemDetail/ItemDetail";
