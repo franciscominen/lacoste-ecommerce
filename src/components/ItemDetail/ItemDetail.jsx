@@ -17,7 +17,6 @@ const ItemDetail = ({ item }) => {
     };
 
     console.log([product])
-    console.log(quantity)
 
     return (
     <>

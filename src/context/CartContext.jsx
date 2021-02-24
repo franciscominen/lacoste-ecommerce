@@ -1,18 +1,29 @@
 import React, {createContext, useState} from "react";
 
-export const cartContex =  createContext();
+export const cartContex =  createContext(); // contexto creado
 
-function CartContext({children}) {
+function CartContext({children}) { // proveedor
+    
     const [product, setProduct] = useState([]);
 
     const addCart = (item) => {
-        if (isInCart(item.item.id === -1)){
-            setProduct(item)
+        console.log(item)
+
+        let inCart = isInCart(item.item.id);
+        
+        if (inCart === -1){
+
+            setProduct([...product, item]);
+
         } else {
-            
+
+            const newProductList = product.filter = (prod => product[inCart].item.id !== prod.item.id);
+            const newQuantity = {...product[inCart], quantity: item.quantity + product[inCart].quantity};
+
+            setProduct([...newProductList, {item: item.item, quantity: newQuantity}]);
         }   
     }
-
+    
     const isInCart = (id) => {
         return product.findIndex(prod  => prod.id === id)  
     }
@@ -21,8 +32,7 @@ function CartContext({children}) {
         <>
             <cartContex.Provider value={{
                 product,
-                addCart,
-                quantity: product.length
+                addCart
             }}>
                 {children}
             </cartContex.Provider>
