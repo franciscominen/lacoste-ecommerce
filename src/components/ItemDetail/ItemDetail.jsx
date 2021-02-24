@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import './style.scss'
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import FadeIn from 'react-fade-in';
+import {cartContex} from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
 
     const [irCart, setIrCart] = useState(false);
-    console.log(item);
+
+    const {addCart, product, quantity} = useContext(cartContex);
   
     const onAdd = (contador) => {
-      console.log("Udselecciono ", contador);
       setIrCart(true);
+      addCart( {item: item, quantity: contador} );
     };
-  
+
+    console.log([product])
+    console.log(quantity)
 
     return (
     <>

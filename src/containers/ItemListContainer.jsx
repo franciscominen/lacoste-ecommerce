@@ -4,18 +4,6 @@ import { ItemList } from "../components/ItemList/index";
 import FadeIn from 'react-fade-in';
 import { useParams, Link } from "react-router-dom";
 
-/* 
-  useEffect(() => {
-    itemPromise.then((res) => setProd(res));
-  }, []); */
-      
-  /* useEffect(() => {
-      itemPromise.then((resp) => {
-      setProd(resp.filter(resp => resp.categoriaId === categoriaId))
-      });
-  }, [categoriaId]); */
-
-
 export default function ItemListContainer() {
   const {categoriaId} = useParams();
   const [prod, setProd] = useState([]);

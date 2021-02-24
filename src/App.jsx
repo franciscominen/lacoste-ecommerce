@@ -3,32 +3,35 @@ import NavbarComponent from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import CartContainer from './containers/CartContainer'; 
-import  {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import { GlobalProvider } from './context/GlobalContext';
-import CategoryContainer from './containers/CategoryContainer';
+import  {BrowserRouter, Switch, Route} from 'react-router-dom';
+import CartContext from "./context/CartContext";
+import CartComponent from './components/Cart/Cart';
 
 const App = () => {
   
   return (
     <>
-      <GlobalProvider>
+        <BrowserRouter>
 
-        <Router>
-          <NavbarComponent />
-          <Switch>
-            
-            <Route exact component={ItemListContainer} path="/" />
+          <CartContext>
 
-            <Route exact component={ItemListContainer} path="/category/:categoriaId" />
+              <NavbarComponent />
 
-            <Route exact component={ItemDetailContainer} path="/product/:id" />
+              <Switch>
+                
+                <Route exact component={ItemListContainer} path="/" />
 
-            <Route exact component={CartContainer} path="/cart" />
+                <Route exact component={ItemListContainer} path="/category/:categoriaId" />
 
-          </Switch>
-        </Router>
-        
-      </GlobalProvider>
+                <Route exact component={ItemDetailContainer} path="/product/:id" />
+
+                <Route exact component={CartComponent} path="/cart" />
+
+              </Switch>
+
+          </CartContext>  
+
+        </BrowserRouter>
     </>
   );
 }
