@@ -10,8 +10,8 @@ export const CartContextProvider = ({children}) => {
     useEffect(() => setLocalStorage(cartItems), [cartItems])
 
     const addItemToCart = (items) => {
-        const newItems = [ ...cartItems ]; //creando array
-        const newItems2 = [ ...newItems, ...items ];
+        const newItems = [ ...cartItems ]; //creando array?
+        const newItems2 = [ ...newItems, ...items ]; //que define la prop items?
         setCartItems(newItems2) 
     }
 
