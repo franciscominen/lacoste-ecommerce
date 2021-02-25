@@ -1,0 +1,103 @@
+$verdeLacoste: #00532c;
+
+.cartProducts_container {
+    display: flex;
+    align-items: flex-start;
+    
+    .cart_product {
+        background: white;
+        display: flex;
+        justify-content: center;
+        border-radius: 5px;
+        border: 1px solid #d0d0d0;
+    }
+    .cart_product_info {
+        width: 20em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // border-right: 1px solid #cacaca;
+
+        .product_tittle {
+            font-size: 16px;
+            font-weight: 600;
+        }
+        .talla_color{
+            margin-bottom: 15px;
+            .product_color {
+                font-size: 15px;
+                color: gray;
+            }
+            .product_talle {
+                font-size: 17px;
+                color: gray;
+            }
+        }
+
+        .price_quantity {
+            margin-top: 15px;
+            .product_price {
+                font-size: 17px;
+                color: $verdeLacoste;
+                font-weight: 700;
+                margin-right: 40px;
+            }
+            .product_quantity {
+                color: gray;
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .ui.button {
+        margin: 20px 20px 0 0;
+    }
+}
+
+.checkout_container {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    width: 26em;
+    height: 20em;
+    border: 1px solid #d0d0d0;
+
+    ul {
+        
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+
+            .checkout_quantity {
+                font-size: 17px;
+                font-weight: 700;
+            }
+            .checkout_totalPrice {
+                font-size: 18px;
+                font-weight: 700;
+                color: $verdeLacoste;
+            }
+            .checkout_variants {
+                font-size: 15px;
+                color: gray;
+            }
+        }
+    }
+
+    .terms_conditions {
+        color: gray;
+        font-size: 11px;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .ui.button {
+        background: $verdeLacoste;
+        color: white;
+        font-size: 16px;
+        width: 15em;
+        margin: auto;
+        display: block;
+    }
+}

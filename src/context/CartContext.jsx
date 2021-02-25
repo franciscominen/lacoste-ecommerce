@@ -1,43 +1,45 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useState, useEffect, useLocalStorage} from "react";
 
-export const cartContex =  createContext(); // contexto creado
+export const cartContext =  createContext({}); // contexto creado
 
-function CartContext({children}) { // proveedor
-    
-    const [product, setProduct] = useState([]);
+export const CartContextProvider = ({children}) => {
+    const [storedValue, setLocalStorage] = useLocalStorage("cart", []); //Asi funciona el localStorage en React?
+    const [cartItems, setCartItems] = useState(storedValue);
+    const [total, setTotal] = useState(0);
 
-    const addCart = (item) => {
-        console.log(item)
+    useEffect(() => setLocalStorage(cartItems), [cartItems])
 
-        let inCart = isInCart(item.item.id);
-        
-        if (inCart === -1){
-
-            setProduct([...product, item]);
-
-        } else {
-
-            const newProductList = product.filter = (prod => product[inCart].item.id !== prod.item.id);
-            const newQuantity = {...product[inCart], quantity: item.quantity + product[inCart].quantity};
-
-            setProduct([...newProductList, {item: item.item, quantity: newQuantity}]);
-        }   
+    const addItemToCart = (items) => {
+        const newItems = [ ...cartItems ]; //creando array
+        const newItems2 = [ ...newItems, ...items ];
+        setCartItems(newItems2) 
     }
-    
-    const isInCart = (id) => {
-        return product.findIndex(prod  => prod.id === id)  
+
+    const removeItems = (item) => {
+        const newItems = cartItems.filter ( (cartItem) => cartItem.id !== item.id)
+        setCartItems(newItems)
     }
+
+    const removeItem = (item) => {
+        const filterProduct = cartItems.filter((cartItem) => cartItem.id === item.id)
+        filterProduct.pop()
+        const products = cartItems.filter((cartItem) => cartItem.id !== item.id)
+        const newProducts = [ ...products, ...filterProduct ]
+        setCartItems(newProducts)
+    }
+
+    console.log(cartItems);
 
     return (
-        <>
-            <cartContex.Provider value={{
-                product,
-                addCart
-            }}>
-                {children}
-            </cartContex.Provider>
-        </>
+        <cartContext.Provider 
+            value={{
+                cartItems,
+                addItemToCart,
+                removeItems,
+                removeItem
+            }}
+        >
+            {children}
+        </cartContext.Provider>
     )
 }
-
-export default CartContext;

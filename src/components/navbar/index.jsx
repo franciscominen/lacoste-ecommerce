@@ -1,5 +1,5 @@
+import React from 'react';
 import "./styles.scss";
-import SearchIcon from "@material-ui/icons/Search";
 import CartWidgetComponent from "../CartWidget/index";
 import { NavLink } from "react-router-dom";
 
@@ -28,7 +28,7 @@ const NavbarComponent = ({item}) => {
             <NavLink to={`/category/${'sale'}`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
           </li>
           <li>
-            <SearchIcon style={{color:'gray'}}/>
+           
           </li>
         </ul>
 

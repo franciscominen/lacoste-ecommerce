@@ -3,7 +3,6 @@ import './style.scss';
 
 const ItemCount = ({ onAdd, stock  }) => {
 
-  console.log(onAdd);
   const [contador, setContador] = useState(1);
 
   const incrementar = () => {

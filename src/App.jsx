@@ -1,11 +1,13 @@
+import 'semantic-ui-css/semantic.min.css';
 import './App.scss';
 import NavbarComponent from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import CartContainer from './containers/CartContainer'; 
 import  {BrowserRouter, Switch, Route} from 'react-router-dom';
-import CartContext from "./context/CartContext";
+import cartContext from "./context/CartContext";
 import CartComponent from './components/Cart/Cart';
+
 
 const App = () => {
   
@@ -13,7 +15,7 @@ const App = () => {
     <>
         <BrowserRouter>
 
-          <CartContext>
+          <cartContext>
 
               <NavbarComponent />
 
@@ -25,11 +27,11 @@ const App = () => {
 
                 <Route exact component={ItemDetailContainer} path="/product/:id" />
 
-                <Route exact component={CartComponent} path="/cart" />
+                <Route exact component={CartContainer} path="/cart" />
 
               </Switch>
 
-          </CartContext>  
+          </cartContext>  
 
         </BrowserRouter>
     </>

@@ -3,20 +3,19 @@ import './style.scss'
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import FadeIn from 'react-fade-in';
-import {cartContex} from '../../context/CartContext';
+import {cartContext} from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
 
     const [irCart, setIrCart] = useState(false);
 
-    const {addCart, product, quantity} = useContext(cartContex);
+    const {addItemToCart, cartItems, quantity} = useContext(cartContext); // ?
   
     const onAdd = (contador) => {
       setIrCart(true);
-      addCart( {item: item, quantity: contador} );
+      addItemToCart( {item: item, quantity: contador} ); // ?
     };
 
-    console.log([product])
 
     return (
     <>
@@ -69,7 +68,7 @@ const ItemDetail = ({ item }) => {
                         </Link>
                     </FadeIn> 
                     : 
-                    <ItemCount stock={item.stock} onAdd={onAdd} />
+                    <ItemCount stock={item.stock} onAdd={onAdd} /> //?
                     }
                     
                     <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
