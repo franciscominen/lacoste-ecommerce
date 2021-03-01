@@ -12,7 +12,7 @@ const CartContainer = () => {
 
             <Step.Group>
 
-                <Step active href='http://google.com'>
+                <Step active>
                     <Icon name='tag' />
                     <Step.Content>
                         <Step.Title>Carrito de productos</Step.Title>
@@ -20,7 +20,7 @@ const CartContainer = () => {
                     </Step.Content>
                 </Step>
 
-                <Step href='http://google.com'>
+                <Step>
                     <Icon name='dolly' />
                     <Step.Content>
                         <Step.Title>Envio</Step.Title>
@@ -28,7 +28,7 @@ const CartContainer = () => {
                     </Step.Content>
                 </Step>
                 
-                <Step href='http://google.com'>
+                <Step>
                     <Icon name='dollar' />
                     <Step.Content>
                         <Step.Title>Pago</Step.Title>

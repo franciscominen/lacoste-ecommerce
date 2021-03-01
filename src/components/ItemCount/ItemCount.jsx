@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import './style.scss';
+/* import {cartContext} from '../../context/CartContext' */
 
-const ItemCount = ({ onAdd, stock  }) => {
+const ItemCount = ({ addItemToCart, stock  }) => {
 
   const [contador, setContador] = useState(1);
 
@@ -17,7 +18,7 @@ const ItemCount = ({ onAdd, stock  }) => {
     }
   };
   const handlerOnAdd = () => {
-    onAdd(contador);
+    addItemToCart(contador);
   };
 
   return (
@@ -36,3 +37,25 @@ const ItemCount = ({ onAdd, stock  }) => {
   )
 };
 export default ItemCount;
+
+/* const ItemCount = ({
+  initial = 1,
+  stock,
+  item,
+  onBuy = () => {},
+  design = 1,
+}) => {
+  const { cartItems, addItemToCart, removeItem } = useContext(cartContext);
+  const [count, setCount] = useState(initial)
+  const [noStock, setNoStock] = useState(false)
+
+  useEffect(() => setNoStock(count >= stock), [count])
+
+  const handleIncrementCounter = () => setCount(count < stock && count >= 0 ? count + 1 : count)
+  const handleDecrementCounter = () => setCount(count <= stock && count > 0 ? count - 1 : count)
+
+  const handleCount = () => {
+    const itemsArr = cartItems.filter((element) => element.id === item.id)
+    return itemsArr.length
+  }
+} */

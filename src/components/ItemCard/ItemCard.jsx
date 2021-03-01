@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.scss"
 import { Link } from "react-router-dom";
+import { Button, Icon } from 'semantic-ui-react'
 
 export const ItemCard = ({ item }) => {
   return (
@@ -22,7 +23,15 @@ export const ItemCard = ({ item }) => {
                 
             </div>
 
-            <Link to={`/product/${item.id}`} className='BtnVerDetalle'> Ver detalle </Link>
+            <Link to={`/product/${item.id}`} className='btn_irItemDetail'>
+              <Button animated='fade' >
+                <Button.Content visible>Ver detalle</Button.Content>
+                <Button.Content hidden>Envio gratis <Icon name='dolly'/></Button.Content>
+              </Button>
+            </Link>
+            
+
+          {/*   <Link to={`/product/${item.id}`} className='BtnVerDetalle'> Ver detalle </Link> */}
 
         </div>
   );

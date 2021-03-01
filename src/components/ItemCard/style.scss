@@ -8,19 +8,21 @@ $verdeLacoste: #00532c;
     align-items: center;
     margin: 10px;
     padding: 5px 15px 5px ;
+    border: 1px solid ghostwhite;
     border-radius: 5px;
-    width: 23em;
+    width: 26em;
+    height: 40em;
     transition: box-shadow .3s;
-    &:hover {
-        box-shadow: 0px 3px 10px 2px rgba(0,0,0,0.09);
-    }
+    /* &:hover {
+        box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.20);
+    } */
 
     .discountContainer {
         display: flex;
         justify-content: flex-start;
 
         .productVariants {
-            margin-right: 15px;
+            margin-right: 7px;
             padding: 4px 6px;
             font-size: 11px;
             color: white;
@@ -51,18 +53,13 @@ $verdeLacoste: #00532c;
         font-size: 13px;
         margin-top: 10px;
     }
-    .BtnVerDetalle{
-        margin: 25px 0 10px 0;
-        padding: 8px 12px;
-        color: $verdeLacoste;
-        border: 1px solid $verdeLacoste;
-        border-radius: 4px;
-        font-size: 15px;
-        font-weight: 500;
-        transition: .2s;
-        &:hover {
+    .btn_irItemDetail{
+        margin-top: 20px;
+
+        .ui.button {
             color: white;
-            background-color: $verdeLacoste;
+            background: $verdeLacoste;
+            width: 9em;
         }
     }
 }
