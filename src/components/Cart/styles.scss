@@ -3,6 +3,7 @@ $verdeLacoste: #00532c;
 .cartProducts_container {
     display: flex;
     align-items: flex-start;
+    margin-bottom: 15px;
     
     .cart_product {
         background: white;
@@ -89,6 +90,7 @@ $verdeLacoste: #00532c;
         color: gray;
         font-size: 11px;
         margin-top: 50px;
+        margin-bottom: 15px;
         text-align: center;
     }
 
