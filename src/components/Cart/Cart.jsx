@@ -1,11 +1,12 @@
 import {useContext} from 'react';
 import {cartContext} from '../../context/CartContext';
-import { Button, Icon } from 'semantic-ui-react'
+import {useCartContext} from '../../context/CartContext';
+import { Button, Icon } from 'semantic-ui-react';
 import './styles.scss';
 
 const CartComponent = (item) => {
 
-    const CartContextUse = useContext(cartContext) // tiene que estar trayendo el value.
+    <useCartContext />
 
     return (
         <>
@@ -21,7 +22,7 @@ const CartComponent = (item) => {
                         
                         <div className='cart_product_info'>
 
-                            <h2 className='product_tittle'>Remera lisa con cuello diferenciado</h2>
+                            <h2 className='product_tittle'>{item.name}</h2>
 
                             <div className='talla_color'>
                                 <span className='product_color'> Gris  /</span>

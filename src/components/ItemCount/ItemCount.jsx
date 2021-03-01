@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './style.scss';
 /* import {cartContext} from '../../context/CartContext' */
 
-const ItemCount = ({ addItemToCart, stock  }) => {
+const ItemCount = ({ onAdd, stock  }) => {
 
   const [contador, setContador] = useState(1);
 
@@ -18,7 +18,7 @@ const ItemCount = ({ addItemToCart, stock  }) => {
     }
   };
   const handlerOnAdd = () => {
-    addItemToCart(contador);
+    onAdd(contador);
   };
 
   return (
