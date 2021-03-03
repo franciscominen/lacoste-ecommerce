@@ -7,16 +7,16 @@ export const ItemCard = ({ item }) => {
   return (
     <div className='itemCard'>
 
-            {item.img}
+            <img src={item.img} style={{maxWidth:'320px'}}/>
             
             <div className='itemDescription'>
                 <div className='discountContainer'>
                     <p className='productVariants'>{item.discount}</p>
-                    <p className='productVariants' style={{background:'gray'}}>{item.coleccion}</p>
+                    <p className='productVariants' style={{background:'gray'}}>{item.colection}</p>
                     <p className='productVariants' style={{background:'#496ABE'}}>{item.color}</p>
                 </div>
                 
-                <h3 className='productName'>{item.name}</h3>
+                <h3 className='productName'>{item.title}</h3>
                 <p className='productPrice'>$ {item.price}</p>
                 <p className='productLastPrice'>$ {item.lastPrice}</p>
                 <p className='stockActual'>Stock actual: {item.stock}</p>

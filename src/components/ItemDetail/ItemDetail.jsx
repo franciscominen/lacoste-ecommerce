@@ -3,18 +3,21 @@ import './style.scss'
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import FadeIn from 'react-fade-in';
-import {cartContext} from '../../context/CartContext';
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
 
-    const [irCart, setIrCart] = useState(false);
+    const [cantidad, setCantidad] = useState(0)
+    const { actualizarTotal, addItem, actualizarCantidad, lista, Cantidad } = useContext(CartContext)
 
-    const {addItemToCart, cartItems, quantity} = useContext(cartContext); // ?
-  
-    const onAdd = (contador) => {
-      setIrCart(true);
-      addItemToCart( {item: item, quantity: contador} ); // ?
-    };
+    const onAdd = (cant)=>{
+        setCantidad(cant)
+        if(cant > 0){
+            addItem(item, cant)
+        }
+
+    }
+
 
 
     return (
@@ -61,14 +64,14 @@ const ItemDetail = ({ item }) => {
 
                 <div style={{marginTop:'3em', display:'flex', alignItems:'flex-end', justifyContent:'space-between'}}>
 
-                    {irCart ? 
+                    {cantidad >= 1 ? 
                     <FadeIn>
-                        <Link to={'/cart'} className='irACartBtn'>
+                        <Link to={'/cart'} className='irACartBtn' onClick={()=>{}}>
                             Finalizar compra <img src={"/img/CartWidget/CartIcon.svg"}/>
                         </Link>
                     </FadeIn> 
                     : 
-                    <ItemCount stock={item.stock} onAdd={onAdd} /> //?
+                    <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/> //?
                     }
                     
                     <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>

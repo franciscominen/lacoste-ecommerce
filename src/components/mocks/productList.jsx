@@ -169,7 +169,7 @@ const getItemsList = (id) => {
             price: '5.200,00', 
             lastPrice: '6.199,00', 
             stock: 16, 
-            coleccion: 2020, 
+            coleccion: 'Coleccion 2020', 
             color:'+1 color',
             colorSeleccionado: 
                 <div className='colorActual' style={{display:'flex', alignItems:'center'}}>

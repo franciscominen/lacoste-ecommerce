@@ -1,17 +1,14 @@
-import React, {useContext} from 'react'
+/* import React, {useContext} from 'react'
 import CartComponent from '../components/Cart/Cart';
 import './styles.scss';
 import { Icon, Step, Button } from 'semantic-ui-react'
-import {cartContext} from '../context/CartContext';
-
+import CartContext from '../context/CartContext';
+import {firestore} from "../firebaseConfig"
+import firebase from "firebase" 
 
 const CartContainer = (item) => {
 
-    const {addItemToCart, cartItems, clearCart, quantity} = useContext(cartContext);
-
-    let precioItem = item.price;
-    let cantidad = item.quantity;
-    let precioTotal = (precioItem * cantidad);
+    const { lista, actualizarTotal, removeItem, limpiarCarrito } = useContext(CartContext);
     
     return (
         <>
@@ -49,11 +46,7 @@ const CartContainer = (item) => {
                 <section style={{display:'flex', justifyContent:'space-between', width:'64.3em'}}>
 
                     <div>
-                        {cartItems.map((item) => (
                         
-                            <CartComponent key={item.id} item={item} />
-                        
-                        ))}
                     </div>
 
                     
@@ -107,4 +100,4 @@ const CartContainer = (item) => {
 }
 
 console.log(CartComponent)
-export default CartContainer;
+export default CartContainer; */

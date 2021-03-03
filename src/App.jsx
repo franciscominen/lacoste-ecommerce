@@ -3,7 +3,7 @@ import './App.scss';
 import NavbarComponent from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-import CartContainer from './containers/CartContainer'; 
+// import CartContainer from './containers/CartContainer'; 
 import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 import CartProvider from "./context/CartContext";
 import CartComponent from './components/Cart/Cart';
@@ -27,7 +27,7 @@ const App = () => {
 
                 <Route exact component={ItemDetailContainer} path="/product/:id" />
 
-                <Route exact component={CartContainer} path="/cart" />
+                <Route exact component={CartComponent} path="/cart" />
 
               </Switch>
 
