@@ -1,4 +1,18 @@
 $verdeLacoste: #00532c;
+$negroLacoste: #2C3330;
+
+.emptyTitle {
+    font-size: 30px;
+    color: $negroLacoste;
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+.container_carrito {
+    display: flex;
+    justify-content: space-between;
+    width: 64em;
+}
 
 .cartProducts_container {
     display: flex;
@@ -17,20 +31,22 @@ $verdeLacoste: #00532c;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        margin: 0 15px;
         // border-right: 1px solid #cacaca;
 
         .product_tittle {
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 15px;
+            font-weight: 500;
+           
         }
         .talla_color{
             margin-bottom: 15px;
             .product_color {
-                font-size: 15px;
+                font-size: 14px;
                 color: gray;
             }
             .product_talle {
-                font-size: 17px;
+                font-size: 14px;
                 color: gray;
             }
         }
@@ -41,17 +57,17 @@ $verdeLacoste: #00532c;
                 font-size: 17px;
                 color: $verdeLacoste;
                 font-weight: 700;
-                margin-right: 40px;
+                margin-left: 80px;
             }
             .product_quantity {
                 color: gray;
-                font-size: 14px;
+                font-size: 13px;
             }
         }
     }
     
     .ui.button {
-        margin: 20px 20px 0 0;
+        margin: 11px 12px 0 0;
     }
 }
 
@@ -102,4 +118,4 @@ $verdeLacoste: #00532c;
         margin: auto;
         display: block;
     }
-}
+} 

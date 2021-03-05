@@ -3,12 +3,13 @@ import './style.scss'
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import FadeIn from 'react-fade-in';
-import CartContext from '../../context/CartContext';
+import {cartContext} from '../../context/CartContext';
 
 const ItemDetail = ({ item }) => {
 
     const [cantidad, setCantidad] = useState(0)
-    const { actualizarTotal, addItem, actualizarCantidad, lista, Cantidad } = useContext(CartContext)
+    const { actualizarTotal, addItem, actualizarCantidad, lista, Cantidad } = useContext(cartContext)
+    const colorSelected = item.colorSelected
 
     const onAdd = (cant)=>{
         setCantidad(cant)
@@ -18,29 +19,26 @@ const ItemDetail = ({ item }) => {
 
     }
 
-
-
     return (
     <>
         <div className='itemContainer' style={{margin:'80px 0'}}>
 
             <div className='imagesContainer'>
-                {item.imgAlt}
-                {item.img}
+                <img src={item.img} style={{maxWidth:'500px'}}/>
             </div>
 
             <div className='detailsContainer'>
 
-                <h1 className='productName'> {item.name} </h1>
+                <h1 className='productName'> {item.title} </h1>
                 
                 <div className='discountColectionContainer' style={{display:'flex'}}>
                     <p className='productVariants'> {item.discount} </p>
-                    <p className='productVariants' style={{background:'gray'}}>{item.coleccion}</p>
+                    <p className='productVariants' style={{background:'gray'}}>{item.colection}</p>
+                    <p className='productVariants' style={{background:'lightblue'}}>{item.color}</p>
                 </div>
 
-                <div className='colorsContainer' style={{display:'flex', justifyContent:'space-between'}}>
-                    {item.colorSeleccionado}
-                    {item.colorVariantes}
+                <div className='colorsContainer' style={{display:'flex'}}>
+                    <p>Color: </p><figure className='colorFigure' style={{background:`{item.colorSelected}`}}></figure>
                 </div>
 
                 <div className='tallasContainer' style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
@@ -87,11 +85,11 @@ const ItemDetail = ({ item }) => {
         <div className='descriptionContainer' >
 
         <h1>Descripcion</h1>
-        <p> {item.referencia}</p>
+        <p> REFERENCIA {item.reference}</p>
 
         <div style={{display:'flex', justifyContent:'space-between', marginTop:'2em'}}>
             <article style={{width:'30em'}}>
-                {item.descripcion}
+                <p>{item.description}</p>
             </article>
 
             <article style={{width:'30em', margin:'0 40px'}}>

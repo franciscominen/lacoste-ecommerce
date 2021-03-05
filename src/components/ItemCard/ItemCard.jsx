@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { Button, Icon } from 'semantic-ui-react'
 
 export const ItemCard = ({ item }) => {
+  
+  const price = item.price.toLocaleString("en-US")
+  const lastPrice = item.lastPrice.toLocaleString("en-US")
+
   return (
     <div className='itemCard'>
 
@@ -17,8 +21,8 @@ export const ItemCard = ({ item }) => {
                 </div>
                 
                 <h3 className='productName'>{item.title}</h3>
-                <p className='productPrice'>$ {item.price}</p>
-                <p className='productLastPrice'>$ {item.lastPrice}</p>
+                <p className='productPrice'>$ {price}</p>
+                <p className='productLastPrice'>$ {lastPrice}</p>
                 <p className='stockActual'>Stock actual: {item.stock}</p>
                 
             </div>

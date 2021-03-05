@@ -1,0 +1,46 @@
+$verdeLacoste: #00532c;
+$negroLacoste: #2C3330;
+
+.step_container {
+    display: flex;
+    justify-content: center;
+}
+
+.steps {
+    margin-top: 8em!important;
+
+    .step {
+
+        .title {
+            color: gray;
+            font-size: 17px!important;
+            font-weight: 600!important;
+            font-family: 'Montserrat', sans-serif!important;
+        }
+
+        .description {
+            color: gray;
+            font-family: 'Montserrat', sans-serif!important;
+            font-size: 12px!important;
+            margin-top: 5px!important;
+        }
+
+        .icon {
+            color: gray!important;
+        }
+    }
+}
+
+
+.ui.steps .step.active {
+   background-color: white;
+   &::after {
+       background: white;
+   }
+   .title {
+       color: $verdeLacoste;
+    }
+    .icon {
+        color: $verdeLacoste!important;
+    }
+}

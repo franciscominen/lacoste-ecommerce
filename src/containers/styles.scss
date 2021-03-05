@@ -2,66 +2,28 @@ $verdeLacoste: #00532c;
 $negroLacoste: #2C3330;
 
 .tittleContainer {
-    margin: 3em 2em 3em 2em;
+    margin: 3em 7em;
+
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 
     .categoryTittle {
-        font-size: 2.5em;
-        color: #2C3330;
-        font-weight: 600;
-    }
+        font-size: 50px;
+        font-weight: 500;
+        color: $negroLacoste;
+    }  
 
     .volverCatalogoBtn {
-        padding: 10px;
-        border: 1px solid $verdeLacoste;
-        border-radius: 5px;
         color: $verdeLacoste;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 18px;
+        border: 2px solid $verdeLacoste;
+        border-radius: 7px;
+        padding: 10px 20px;
         transition: .2s;
         &:hover {
             color: white;
-            background: $verdeLacoste;
+            background-color: $verdeLacoste;
         }
-    }
-}
-
-.steps {
-    margin-top: 50px!important;
-    .step {
-
-        .title {
-            color: gray;
-            font-size: 17px!important;
-            font-weight: 600!important;
-            font-family: 'Montserrat', sans-serif!important;
-        }
-
-        .description {
-            color: gray;
-            font-family: 'Montserrat', sans-serif!important;
-            font-size: 12px!important;
-            margin-top: 5px!important;
-        }
-
-        .icon {
-            color: gray!important;
-        }
-    }
-}
-
-
-.ui.steps .step.active {
-   background-color: white;
-   &::after {
-       background: white;
-   }
-   .title {
-       color: $verdeLacoste;
-    }
-    .icon {
-        color: $verdeLacoste!important;
     }
 }

@@ -1,48 +1,113 @@
 import React, { useContext, useState } from "react"
-import CartContext from "../../context/CartContext";
-import { Button } from 'semantic-ui-react'
-import {NavLink} from "react-router-dom"
-/* import {firestore} from "../firebaseConfig"
-import firebase from "firebase" */
-
-import './styles.scss';
+import { cartContext } from "../../context/CartContext";
+import { Button, Icon } from 'semantic-ui-react'
+import {Link} from "react-router-dom"
+import "./styles.scss"
 
 const CartComponent = (item) => {
 
-    const { lista, actualizarTotal, removeItem, limpiarCarrito } = useContext(CartContext);
+    const { lista, actualizarTotal, removeItem, clearCart } = useContext(cartContext);
 
     return (
         <>
-        <div>   
+        <div style={{display:'flex', justifyContent:'center', margin:'2em 0'}}>   
 
-            <div className={lista.length === 0? "": "container-carrito"}>
-                {lista.length === 0 ? <>
-                    <h3>No hay items aún</h3>
-                    <NavLink to="/">Regresar</NavLink>
-                </>
-                                    :
+            <div className={ lista.length === 0 ? "" : "container_carrito"}>
+                {lista.length === 0 ? 
                 <>
+                    <div style={{display:"flex", flexDirection:'column', justifyContent:'center', alignItems:'center', marginTop:'70px'}}>
+                       <h3 className='emptyTitle'>No hay productos en el carrito</h3>
+                        <Link to="/catalogo">
+                            <Button style={{color:'white', background:'#00532c'}}>
+                                Regresar al catalogo
+                            </Button>
+                        </Link> 
+                    </div>
+                    
+                </>
+                :
+                <>
+                <div style={{display:'flex', flexDirection:'column'}}> 
                     {lista.map((elemento) => {
                         return (
                             <>
-                                <div className="item">
-                                    <img src={elemento.item.pictureUrl}></img>
-                                    <div className="info-carrito">
-                                        <h2>{elemento.item.title}</h2>
-                                        <p>precio x unidad: ${elemento.item.price}</p>
-                                        <p className="cant">Cantidad : {elemento.quantity}</p>
-                                        <p className="subTot">SubTotal: $ {elemento.item.price * elemento.quantity}</p>
+                                <section className='cartProducts_container'>
+                                    <div className='cart_product'>
+
+                                        <div style={{marginLeft:'10px'}}>
+                                            <img src={elemento.item.img} style={{maxWidth:'150px'}}/>
+                                        </div>
+                                        
+                                        <div className='cart_product_info'>
+
+                                            <h2 className='product_tittle'>{elemento.item.title}</h2>
+
+                                            <div className='talla_color'>
+                                                <span className='product_color'> Color:  </span>
+                                                <span className='product_talle'> Talla: </span>
+                                            </div>
+
+                                            <div className='price_quantity'>
+                                                <span className='product_quantity'>Selecciono: {elemento.quantity}</span>
+                                                <span className='product_price'>$ {elemento.item.price.toLocaleString("en-US")}</span>
+                                            </div>
+
+                                        </div>
+                                        
+                                        <div >
+                                            <Button icon='remove' color='red' size='mini' onClick={()=>{removeItem(elemento)}} />
+                                        </div>
+
                                     </div>
-                                    <h2 onClick={()=>{removeItem(elemento)}} > X </h2>
-                                </div>
+                                </section>
+                            
                             </>
                         )
+                        
                     })}
-                    <h2 className="tot">Total: ${actualizarTotal()}</h2>
-                </>}
-            </div>
+                </div>
+                    <div>
+                        <div className='checkout_container'>
 
-            {/* {id != ""? <p>su orden de compra ha sido confirmada, Nro de orden : {id}</p>:null} */}
+                            <div className='totalPrice_container'>
+                                <ul>
+                                    <li>
+                                        <span className='checkout_quantity'>PRODUCTOS:  </span>
+                                        <span className='checkout_totalPrice' style={{color:'#2C3330'}}> $ {actualizarTotal().toLocaleString("en-US")} </span>
+                                    </li>
+                                    <li>
+                                        <span className='checkout_variants'>Envio</span>
+                                        <span className='checkout_variants'> $ 299,00 </span>
+                                    </li>
+                                    <li>
+                                        <span className='checkout_variants'>Promocion</span>
+                                        <span className='checkout_variants'> - $ 299,00 </span>
+                                    </li>
+                                    <li>
+                                        <span className='checkout_quantity'>TOTAL</span>
+                                        <span className='checkout_totalPrice'>$ {actualizarTotal().toLocaleString("en-US")}</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <p className='terms_conditions'>Acepto sin reservas las condiciones generales</p>
+
+                            <Link to={"/cart/clientdata"}>
+                            <Button animated='fade'>
+                                <Button.Content visible>Coordinar envio a casa <Icon name='dolly'/></Button.Content>
+                                <Button.Content hidden>Siguiente paso <Icon name='arrow right'/></Button.Content>
+                            </Button>
+                            </Link>
+
+                        </div>
+
+                        <Button inverted color='red' style={{marginTop:'15px', fontSize:'15px'}} onClick={()=>{clearCart()}} > 
+                            <Icon name='trash alternate' /> Vaciar el carrito 
+                        </Button>
+                    </div>
+                </>}
+
+            </div>
 
         </div> 
         </>
@@ -50,37 +115,3 @@ const CartComponent = (item) => {
 }
 
 export default CartComponent;
-
-
-
-
-{/* <section className='cartProducts_container'>
-
-<div className='cart_product'>
-
-    <div className='image_container'>
-        {item.img} 
-    </div>
-    
-    <div className='cart_product_info'>
-
-        <h2 className='product_tittle'>{item.name}</h2>
-
-        <div className='talla_color'>
-            <span className='product_color'> {item.color}  </span>
-            <span className='product_talle'> Talla: {item.talla} </span>
-        </div>
-
-        <div className='price_quantity'>
-            <span className='product_price'>{item.price}</span>
-            <span className='product_quantity'>Selecciono: {item.quantity}</span>
-        </div>
-
-    </div>
-        
-    <div >
-        <Button icon='remove' color='red' size='mini' onClick={removeItem} />
-    </div>
-
-</div>
-</section> */}

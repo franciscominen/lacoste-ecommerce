@@ -34,14 +34,14 @@ const NavbarComponent = ({item}) => {
 
         <ul className='cartLogin'>
           <li>
-            <NavLink to={`/cart`}><CartWidgetComponent/></NavLink>
+            <NavLink to={"/cart"}><CartWidgetComponent/></NavLink>
           </li>
-          
+          <span style={{background:'#d8d8d8', width:'0.7px', height:'40px'}}></span>
           <li>
-            <img src={"/img/Navbar/MapIcon.svg"} style={{maxWidth:'30px', margin:'5px 10px 0'}} />
+            <img src={"/img/Navbar/MapIcon.svg"} style={{maxWidth:'24px', margin:'5px 10px 0'}} />
           </li>
           <li>
-            <img src={"/img/Navbar/LoginIcon.svg"} style={{maxWidth:'40px', margin:'5px 0 0'}} />
+            <img src={"/img/Navbar/LoginIcon.svg"} style={{maxWidth:'32px', margin:'5px 0 0'}} />
           </li>
         </ul>
 

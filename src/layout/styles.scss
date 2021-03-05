@@ -1,0 +1,51 @@
+$verdeLacoste: #00532c;
+.home_container {
+    position: absolute;
+    height: 100vh;
+    .video {
+        height: 100vh;
+    }
+
+    .title_container {
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        position: absolute;
+        top: 24em;
+        left: 6em;
+
+        .home_title {
+            font-size: 55px;
+            font-weight: 400;
+            color: white;
+            z-index: 5;
+            display: inline-block;
+            position: relative;
+            margin: 0;
+        }
+
+        .home_subtitle {
+            display: inline-block;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            margin-left: 5px;
+        }
+    } 
+    
+    a.catalogo_btn {
+        font-size: 20px;
+        position: relative;
+        bottom: 5em;
+        left: 4em;
+        border: 2px solid $verdeLacoste;
+        border-radius: 5px;
+        padding: 10px 15px;
+        color: $verdeLacoste;
+        transition: .3s;
+        &:hover {
+            color: white;
+            background: $verdeLacoste;
+        }
+    }
+}
