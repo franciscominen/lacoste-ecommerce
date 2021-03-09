@@ -4,13 +4,13 @@ export const cartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
-    const [lista, setLista] = useState([])
+    const [cart, setCart] = useState([])
     let [total, setTotal] = useState(0)
     let [cantidad, setCantidad] = useState(0)
 
     const isInCart = (id) => {
 
-        const item = lista.filter(p => p.item.id === id);
+        const item = cart.filter(p => p.item.id === id);
 
         if ( item.length > 0 ) {
             return true
@@ -23,40 +23,40 @@ export const CartProvider = ({ children }) => {
 
     function addItem(newItem, quantity) {
 
-        const idx = lista.findIndex((listI) => listI.item.id === newItem.id)
+        const idx = cart.findIndex((listI) => listI.item.id === newItem.id)
 
         if (idx === -1) {
-            const l = [ ...lista, { item: newItem, quantity } ]
-            setLista(l)
+            const l = [ ...cart, { item: newItem, quantity } ]
+            setCart(l)
         } else {
-            const newQuantity = lista[idx].quantity + quantity
-            const oldI = lista.filter((oldI) => oldI.item.id !== lista[idx].item.id)
-            const l = [...oldI, { item: lista[idx].item, quantity: newQuantity }]
-            setLista(l)
+            const newQuantity = cart[idx].quantity + quantity
+            const oldI = cart.filter((oldI) => oldI.item.id !== cart[idx].item.id)
+            const l = [...oldI, { item: cart[idx].item, quantity: newQuantity }]
+            setCart(l)
         }
     }
     
-    const removeItem = (elemento)=>{
-        const listaNew = lista.filter(p=> p.item.id != elemento.item.id)
-        setLista(listaNew)
+    const removeItem = (elemento) => {
+        const listaNew = cart.filter(p=> p.item.id != elemento.item.id)
+        setCart(listaNew)
     }
 
     const actualizarTotal = () => {
         let suma = 0;
-        lista.forEach(elemento => suma += elemento.item.price*elemento.quantity)
+        cart.forEach(elemento => suma += elemento.item.price * elemento.quantity)
         setTotal(suma)
         return suma
     }
 
     const actualizarCantidad = () => {
         let cantidad = 0;
-        lista.forEach(elemento => cantidad += elemento.quantity)
+        cart.forEach(elemento => cantidad += elemento.quantity)
         setCantidad(cantidad)
         return cantidad
     }
 
     const clearCart = ()=>{
-        setLista([])
+        setCart([])
     }
 
     return (
@@ -64,9 +64,10 @@ export const CartProvider = ({ children }) => {
             <cartContext.Provider value={{
                 clearCart: clearCart,
                 addItem: addItem,
-                lista: lista,
+                cart: cart,
+                serCart: setCart,
                 removeItem: removeItem,
-                Cantidad: lista.length, 
+                Cantidad: cart.length, 
                 actualizarCantidad: actualizarCantidad,
                 total: total,
                 actualizarTotal: actualizarTotal

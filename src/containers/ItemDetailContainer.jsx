@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
       console.log("Ha ocurrido un error, intente nuevamente.")
     })
 
-    }, [])
+  }, [])
 
   return (
     <>

@@ -5,19 +5,18 @@ import {Link} from "react-router-dom"
 import "./styles.scss"
 
 const CartComponent = (item) => {
-
-    const { lista, actualizarTotal, removeItem, clearCart } = useContext(cartContext);
+    const { cart, setCart, actualizarTotal, removeItem, clearCart } = useContext(cartContext);
 
     return (
         <>
         <div style={{display:'flex', justifyContent:'center', margin:'2em 0'}}>   
 
-            <div className={ lista.length === 0 ? "" : "container_carrito"}>
-                {lista.length === 0 ? 
+            <div className={ cart.length === 0 ? "" : "container_carrito"}>
+                {cart.length === 0 ? 
                 <>
                     <div style={{display:"flex", flexDirection:'column', justifyContent:'center', alignItems:'center', marginTop:'70px'}}>
                        <h3 className='emptyTitle'>No hay productos en el carrito</h3>
-                        <Link to="/catalogo">
+                        <Link to="/">
                             <Button style={{color:'white', background:'#00532c'}}>
                                 Regresar al catalogo
                             </Button>
@@ -28,7 +27,7 @@ const CartComponent = (item) => {
                 :
                 <>
                 <div style={{display:'flex', flexDirection:'column'}}> 
-                    {lista.map((elemento) => {
+                    {cart.map((elemento) => {
                         return (
                             <>
                                 <section className='cartProducts_container'>
@@ -101,9 +100,14 @@ const CartComponent = (item) => {
 
                         </div>
 
-                        <Button inverted color='red' style={{marginTop:'15px', fontSize:'15px'}} onClick={()=>{clearCart()}} > 
+                        <Button inverted size='mini' color='red' style={{marginTop:'15px', fontSize:'15px'}} onClick={()=>{clearCart()}} > 
                             <Icon name='trash alternate' /> Vaciar el carrito 
                         </Button>
+                        <Link to="/catalogo">
+                            <Button inverted size='mini' color='green' style={{marginTop:'15px', fontSize:'15px'}} > 
+                                Continuar comprando
+                            </Button>
+                        </Link>
                     </div>
                 </>}
 
