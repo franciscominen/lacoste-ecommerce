@@ -1,15 +1,15 @@
 import 'semantic-ui-css/semantic.min.css';
 import './App.scss';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import NavbarComponent from './components/Navbar';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-// import CartContainer from './containers/CartContainer'; 
 import  {BrowserRouter, Switch, Route} from 'react-router-dom';
 import {CartProvider} from "./context/CartContext";
-import CartComponent from './components/Cart/Cart';
-import CartContainer from './containers/CartContainer';
+import CartComponent from "./components/Cart/Cart";
+import CheckoutComponent from "./components/Cart/ClientForm/ClientForm";
+import PagoForm from "./components/Cart/PagoForm";
 import Home from './layout/Home';
-
 
 const App = () => {
   
@@ -27,20 +27,22 @@ const App = () => {
                 
                 <Route exact component={ItemListContainer} path="/catalogo" />
 
-                <Route exact component={ItemListContainer} path="/category/:categoriaId" />
+                <Route exact component={ItemListContainer} path="/categories/:categoriaId" />
 
-                <Route exact component={ItemDetailContainer} path="/product/:id" />
+                <Route exact component={ItemDetailContainer} path="/item/:id" />
 
-                <Route exact component={CartContainer} path="/cart"> 
-
-                </Route>
-
+                <Route exact component={CartComponent} path="/cart" /> 
+                
+                <Route exact component={CheckoutComponent} path="/clientdata" /> 
+                
+                <Route exact component={PagoForm} path="/pago" /> 
+       
               </Switch>
 
           </CartProvider>  
 
         </BrowserRouter>
-    </>
+    </> 
   );
 }
 

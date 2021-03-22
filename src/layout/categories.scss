@@ -1,0 +1,144 @@
+$verdeLacoste: #00532c;
+$negroLacoste: #2C3330;
+.title {
+    font-size: 50px;
+    font-weight: 300;
+    margin-left: 15px;
+}
+.backToTop{
+    background-color: #00532c;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 30px;
+    border-radius: 5px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 3%;
+    bottom: 3%;
+    transition: .2s;
+    opacity: 0;
+    &:hover {
+        color: white;
+    }
+    i.icon {
+        margin: 0;
+        position: relative;
+        top: 4px;
+    }
+}
+.backToTop.active{
+    opacity: 1;
+}
+
+.categoriesLayout_home {
+    margin: 5em 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .cateogries_home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        .category_home {
+            width: 50%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            &:hover .link_btn {
+                background: white;
+            }
+
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .link_btn {
+                position: absolute;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 3px;
+                font-weight: 500;
+                font-size: 25px;
+                font-weight: 400;
+                transition: .3s;
+                padding: 10px 15px;
+                color: $verdeLacoste;
+                background: #ffffff63;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.nationalSection_container {
+    display: flex;
+    justify-content: center;
+    background: #ffe348;
+    padding: 4em 0;
+
+    .video_container {
+        width: 50%;
+
+        h2 {
+            color: $negroLacoste;
+            font-size: 27px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .descrip_container {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        margin-left: 15px;
+
+        h3 {
+            font-size: 13px;
+            color: gray;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+        h1{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 0 0 30px 0;
+        }
+        p {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 50px;
+        }
+        button {
+            background-color: white;
+            color: $verdeLacoste;
+            position: relative;
+            bottom: 5px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 15px;
+            &:hover {
+                background-color: $verdeLacoste;
+                color: white;
+            }
+        }
+        
+    }
+}

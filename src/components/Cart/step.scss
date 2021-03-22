@@ -13,6 +13,7 @@ $negroLacoste: #2C3330;
 
         .title {
             color: gray;
+            margin: 0;
             font-size: 17px!important;
             font-weight: 600!important;
             font-family: 'Montserrat', sans-serif!important;
@@ -30,7 +31,6 @@ $negroLacoste: #2C3330;
         }
     }
 }
-
 
 .ui.steps .step.active {
    background-color: white;

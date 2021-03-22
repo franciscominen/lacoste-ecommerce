@@ -1,28 +1,28 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import './style.scss'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import FadeIn from 'react-fade-in';
 import {cartContext} from '../../context/CartContext';
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const ItemDetail = ({ item }) => {
 
     const [cantidad, setCantidad] = useState(0)
-    const { actualizarTotal, addItem, actualizarCantidad, lista, Cantidad } = useContext(cartContext)
-    const colorSelected = item.colorSelected
+    const { addItem } = useContext(cartContext)
 
     const onAdd = (cant)=>{
         setCantidad(cant)
         if(cant > 0){
             addItem(item, cant)
         }
-
     }
 
     return (
     <>
-        <div className='itemContainer' style={{margin:'80px 0'}}>
-
+        <div className='itemContainer' id="itemDetail" style={{margin:'80px 0'}}>
+                                        
             <div className='imagesContainer'>
                 <img src={item.img} style={{maxWidth:'500px'}}/>
             </div>
@@ -37,26 +37,34 @@ const ItemDetail = ({ item }) => {
                     <p className='productVariants' style={{background:'lightblue'}}>{item.color}</p>
                 </div>
 
-                <div className='colorsContainer' style={{display:'flex'}}>
-                    <p>Color: </p><figure className='colorFigure' style={{background:`{item.colorSelected}`}}></figure>
-                </div>
-
-                <div className='tallasContainer' style={{display:'flex', alignItems:'center', justifyContent:'space-between'}}>
-                    <div style={{display:'flex', alignItems:'center'}}>
-                        <p>Talla:</p>
-                        {item.tallas}
+                <div className='colorSize_container'>
+                    <div className='selects_container'>
+                        <p>Colores: </p>
+                        <select name='colorSelected' id='colorSelected'>
+                            {item.colors && item.colors.map((color, valueColor) => {
+                                return <option key={valueColor}>{color}</option>
+                            })}
+                        </select>
                     </div>
-                    <a href="">Guia de tallas</a>
-                </div>
 
+                    <div className='selects_container'>
+                        <p>Talla: </p>
+                        <select name='sizes'>
+                            {item.sizes && item.sizes.map((index, value) => {
+                                return <option key={value}>{index}</option>
+                            })}
+                        </select>
+                    </div>
+                </div>
+                
                 <div className='precioEnvioContainer' style={{display:'flex', alignItems:'center', justifyContent:'space-between', marginTop:'5em'}}>
                     <article className='preciosContainer'>
                         <p className='productPrice'> $ {item.price}</p>
                         <p className='productLastPrice'> $ {item.lastPrice}</p>
                     </article>
                     <article className='envioContainer' style={{display:'flex', alignItems:'center', flexDirection:'column'}}>
-                        <a href="" className='calcularEnvioBtn'>Calcular envio</a>
-                        <a href="" className='devolucion'>Devolucion gratuita</a>
+                        <p className='calcularEnvioBtn'>Calcular envio</p>
+                        <p href="" className='devolucion'>Devolucion gratuita</p>
                     </article>
                 </div>
 
@@ -64,9 +72,9 @@ const ItemDetail = ({ item }) => {
 
                     {cantidad >= 1 ? 
                     <FadeIn>
-                        <Link to={'/cart'} className='irACartBtn' onClick={()=>{}}>
+                        <NavLink to={'/cart'} className='irACartBtn' onClick={()=>{}}>
                             Finalizar compra <img src={"/img/CartWidget/CartIcon.svg"}/>
-                        </Link>
+                        </NavLink>
                     </FadeIn> 
                     : 
                     <ItemCount stock={item.stock} onAdd={onAdd} initial={1}/> //?
@@ -74,7 +82,10 @@ const ItemDetail = ({ item }) => {
                     
                     <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
                         <p style={{color:'gray', fontSize:'14px'}}>Stock: {item.stock}</p>
-                        <a href="" className='descriptionBtn'>Ver descripcion</a>
+                        <Link smooth={true} duration={600} offset={485} to='itemDetail'>
+                          <p href="" className='descriptionBtn'>Ver descripcion</p>  
+                        </Link>
+                        
                     </div>
                 </div>
 
@@ -82,7 +93,7 @@ const ItemDetail = ({ item }) => {
 
         </div>
 
-        <div className='descriptionContainer' >
+        <div className='descriptionContainer'>
 
         <h1>Descripcion</h1>
         <p> REFERENCIA {item.reference}</p>

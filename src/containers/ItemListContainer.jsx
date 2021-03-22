@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Footer from "../layout/Footer"
 import "./styles.scss"
 import { ItemList } from "../components/ItemList/index";
 import FadeIn from 'react-fade-in';
@@ -43,12 +44,12 @@ export default function ItemListContainer() {
     <>
       { loading ? 
 
-        <div style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', position:'relative', top:'14em'}}>
-          <img src="/img/Loaders/loader.gif" alt="Cargando..." style={{maxWidth:'180px'}}/> 
-          <h2 style={{fontSize:'15px', fontWeight:'300', color:'gray'}}>Cargando...</h2>
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', flexDirection:'column', position:'relative', top:'20em'}}>
+          <img src="/img/Loaders/loader.gif" alt="Cargando..." style={{maxWidth:'140px'}}/> 
         </div>
 
       : 
+        <>
         <section style={{margin:'7.5em 3em'}}>
           
           <FadeIn>  
@@ -70,8 +71,11 @@ export default function ItemListContainer() {
               </div>
             </FadeIn>
           </div>
-          
+
         </section>
+        
+        <Footer/>
+        </>
       }
     </>
     );

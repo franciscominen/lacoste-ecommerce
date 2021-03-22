@@ -6,17 +6,17 @@ import FadeIn from 'react-fade-in';
 
 const CartWidgetComponent = () => {
 
-    const {Cantidad, actualizarCantidad, lista} = useContext(cartContext)
+    const {cantidad, actualizarCantidad, lista} = useContext(cartContext)
     console.log(lista)
 
     return (
         <div className="compras_container">
             <>
-                <Link className="link" to="/Cart">
+                <Link className="link" to="/cart">
                     <img src={"/img/CartWidget/CartIcon.svg"} className='cartIcon' style={{maxWidth:'31px', marginRight:'15px'}}/>
                 
                 
-                { Cantidad > 0 ?
+                { cantidad > 0 ?
                     
                     <div className="cantItems_container">
                         <span className="cantItems"> {actualizarCantidad()} </span> 

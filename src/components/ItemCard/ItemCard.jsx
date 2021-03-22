@@ -27,7 +27,7 @@ export const ItemCard = ({ item }) => {
                 
             </div>
 
-            <Link to={`/product/${item.id}`} className='btn_irItemDetail'>
+            <Link to={`/item/${item.id}`} className='btn_irItemDetail'>
               <Button animated='fade' >
                 <Button.Content visible>Ver detalle</Button.Content>
                 <Button.Content hidden>Envio gratis <Icon name='dolly'/></Button.Content>

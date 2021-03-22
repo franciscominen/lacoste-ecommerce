@@ -2,8 +2,7 @@ import React, {useContext} from 'react'
 import './step.scss';
 import { Icon, Step, Button } from 'semantic-ui-react'
 import {cartContext} from '../../context/CartContext';
-import FadeIn from 'react-fade-in';
-
+/* PROBAR useParams() */
 
 const CartStep = (item) => {
 
@@ -11,11 +10,10 @@ const CartStep = (item) => {
     
     return (
         <>
-            <FadeIn>
             <section className="step_container">
                 <Step.Group>
 
-                    <Step active >
+                    <Step className={window.location.href === "http://localhost:3000/cart" ? 'step active' : ''}> {/* PROBAR useParams()  */}
                             <Icon name='tag' />
                             <Step.Content>
                                 <Step.Title>Carrito de productos</Step.Title>
@@ -25,7 +23,7 @@ const CartStep = (item) => {
                     </Step>
 
 
-                    <Step>
+                    <Step className={window.location.href === "http://localhost:3000/clientdata" ? 'step active' : ''}>
                         <Icon name='edit' />
                         <Step.Content>
                             <Step.Title>Datos del cliente</Step.Title>
@@ -33,7 +31,7 @@ const CartStep = (item) => {
                         </Step.Content>
                     </Step>
                     
-                    <Step>
+                    <Step className='step_pago'>
                         <Icon name='dolly' />
                         <Step.Content>
                             <Step.Title>Pago y envio</Step.Title>
@@ -43,7 +41,6 @@ const CartStep = (item) => {
 
                 </Step.Group>
             </section>
-            </FadeIn>
         </>
     )
 }

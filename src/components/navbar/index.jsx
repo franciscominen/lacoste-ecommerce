@@ -1,31 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./styles.scss";
 import CartWidgetComponent from "../CartWidget/index";
 import { NavLink } from "react-router-dom";
+import {Link} from "react-scroll";
 
 const NavbarComponent = ({item}) => {
 
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackgroundNavbar = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true)
+    } else {
+      setNavbar(false)
+    }
+  };
+  window.addEventListener('scroll', changeBackgroundNavbar);
+
   return (
     <>
-      <nav>
 
-        <NavLink to={'/'}> <img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'150px'}}/> </NavLink>
+      <nav className={navbar ? 'navbar active' : 'navbar'}>
+
+        <NavLink to={'/'}><img src={"/img/Navbar/LogoNav.svg"} style={{maxWidth:'150px'}}/></NavLink>
       
         <ul className='categorias'>
           <li>
-            <NavLink to={`/category/${'novedades'}`} activeClassName='categoriaActive' className='categoria'> Novedades </NavLink>
+            <NavLink to={`/categories/${'novedades'}`} activeClassName='categoriaActive' className='categoria'> Novedades </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/${'mujer'}`} activeClassName='categoriaActive'  className='categoria'> Mujer </NavLink>
+            <NavLink to={`/categories/${'mujer'}`} activeClassName='categoriaActive'  className='categoria'> Mujer </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/${'hombre'}`} activeClassName='categoriaActive' className='categoria'> Hombre </NavLink>
+            <NavLink to={`/categories/${'hombre'}`} activeClassName='categoriaActive' className='categoria'> Hombre </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/${'kids'}`} activeClassName='categoriaActive' className='categoria'> Niños </NavLink>
+            <NavLink to={`/categories/${'kids'}`} activeClassName='categoriaActive' className='categoria'> Niños </NavLink>
           </li>
           <li>
-            <NavLink to={`/category/${'sale'}`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
+            <NavLink to={`/categories/${'sale'}`} activeClassName='categoriaActive' className='categoria' style={{color:'red'}}> SALE </NavLink>
           </li>
           <li>
            

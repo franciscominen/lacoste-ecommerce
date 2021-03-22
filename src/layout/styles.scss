@@ -1,6 +1,13 @@
+@keyframes iconMove {
+    0% { transform: translateY(0); }
+    50% {transform: translateY(-0.5em);  }
+    100% { transform: translateY(0); }
+}
+
 $verdeLacoste: #00532c;
+
 .home_container {
-    position: absolute;
+    position: relative;
     height: 100vh;
     .video {
         height: 100vh;
@@ -34,18 +41,95 @@ $verdeLacoste: #00532c;
     } 
     
     a.catalogo_btn {
-        font-size: 20px;
+        font-size: 17px;
         position: relative;
-        bottom: 5em;
-        left: 4em;
-        border: 2px solid $verdeLacoste;
-        border-radius: 5px;
+        bottom: 8em;
+        left: 5em;
+        border: 1px solid white;
+        border-radius: 15px;
         padding: 10px 15px;
-        color: $verdeLacoste;
+        color: white;
         transition: .3s;
         &:hover {
             color: white;
             background: $verdeLacoste;
+            border: $verdeLacoste;
         }
+    }
+
+    .icon_container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: absolute;
+        bottom: 1em;
+        .down_icon {
+            font-size: 35px;
+            color: #ffffffd1;
+            animation-name: iconMove;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.footer {
+    background-color: #f4f4f4;
+    width: 100%;
+    padding: 60px 40px 20px 40px;
+    .footer_container {
+        display: flex;
+
+        justify-content: space-around;
+
+        h2 {
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        h3 {
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 11px;
+            margin: 10px 0;
+        }
+
+        ul {
+            li {
+                margin: 12px 0;
+                color: gray;
+            }
+        }
+
+        .icon {
+            color: $verdeLacoste;
+            font-size: 16px;
+            margin-top: 30px;
+        }
+
+        .button {
+            color: $verdeLacoste;
+        }
+
+        input{
+            &:focus {
+                border-color: $verdeLacoste;
+            }
+        }
+        
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+    .icon{
+        font-size: 22px;
+        color: gray;
+        margin: 0 7px;
     }
 }

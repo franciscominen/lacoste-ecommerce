@@ -1,28 +1,44 @@
-import React, { useState, createContext } from "react";
+import React, { useState, createContext, useEffect } from "react";
 
 export const cartContext = createContext();
 
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
-    let [total, setTotal] = useState(0)
-    let [cantidad, setCantidad] = useState(0)
+    const [total, setTotal] = useState(0)
+    const [cantidad, setCantidad] = useState(0)
+
+        // Local Storage Get
+        useEffect(() => {
+            if (localStorage.getItem('Cart') !== null) {
+                setCart(JSON.parse(localStorage.getItem('Cart')));
+            }
+            if (localStorage.getItem('Precio-Total') !== null) {
+                setTotal(JSON.parse(localStorage.getItem('Precio-Total')));
+            }
+            if (localStorage.getItem('Cantidad-Total') !== null) {
+                setCantidad(JSON.parse(localStorage.getItem('Cantidad-Total')));
+            }
+        }, []);
+      
+        // Local Storage Set
+        useEffect(() => {
+            localStorage.setItem('Cart', JSON.stringify(cart));
+            localStorage.setItem('Precio-Total', JSON.stringify(total));
+            localStorage.setItem('Cantidad-Total', JSON.stringify(cantidad));
+        }, [cart, total, cantidad]);
 
     const isInCart = (id) => {
-
         const item = cart.filter(p => p.item.id === id);
-
         if ( item.length > 0 ) {
             return true
         }
         else{
             return false
         }
-
     }
 
     function addItem(newItem, quantity) {
-
         const idx = cart.findIndex((listI) => listI.item.id === newItem.id)
 
         if (idx === -1) {
@@ -53,9 +69,10 @@ export const CartProvider = ({ children }) => {
         cart.forEach(elemento => cantidad += elemento.quantity)
         setCantidad(cantidad)
         return cantidad
+        
     }
-
-    const clearCart = ()=>{
+ 
+    const clearCart = () => {
         setCart([])
     }
 
@@ -67,7 +84,7 @@ export const CartProvider = ({ children }) => {
                 cart: cart,
                 serCart: setCart,
                 removeItem: removeItem,
-                Cantidad: cart.length, 
+                cantidad: cart.length, 
                 actualizarCantidad: actualizarCantidad,
                 total: total,
                 actualizarTotal: actualizarTotal
@@ -78,5 +95,4 @@ export const CartProvider = ({ children }) => {
             </cartContext.Provider>
         </>
     )
-
 }
