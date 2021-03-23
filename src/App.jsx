@@ -33,7 +33,7 @@ const App = () => {
 
                 <Route exact component={CartComponent} path="/cart" /> 
                 
-                <Route exact component={CheckoutComponent} path="/clientdata" /> 
+                <Route exact component={CheckoutComponent} path="/clientform" /> 
                 
                 <Route exact component={PagoForm} path="/pago" /> 
        

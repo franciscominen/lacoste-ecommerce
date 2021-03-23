@@ -2,14 +2,14 @@ import React, { useContext, useState } from 'react';
 import firebase from 'firebase/app'
 import {Link} from "react-router-dom";
 import { cartContext } from "../../../context/CartContext";
-import { Icon, Input, Button, Checkbox, Divider } from 'semantic-ui-react';
+import { Icon, Button, Divider } from 'semantic-ui-react';
 import { getFirestore } from "../../../firebaseConfig";
 import CartStep from "../CartStep";
 import FadeIn from "react-fade-in";
 import PurchaseData from './PurchaseData';
-import "./form.scss";
+import "../styles/form.scss";
 
-const CheckoutComponent = (elemento) => {
+const EnvioFormComponent = (elemento) => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
@@ -24,7 +24,7 @@ const CheckoutComponent = (elemento) => {
     const [date, setDate] = useState('');
     const [total, setTotal]= useState(0);
     const [purchase, setPurchase]= useState([]);
-    const { cart, setCart, actualizarTotal, removeItem, clearCart } = useContext(cartContext);
+    const { cart, actualizarTotal, clearCart } = useContext(cartContext);
 
     const finalizarCompra = (evt) => {
         evt.preventDefault();
@@ -62,25 +62,6 @@ const CheckoutComponent = (elemento) => {
                 console.log(err);
         });
     }
-     
-    const updateStock = (purchaseInfo) => {
-        purchaseInfo.items.map((element) => {
-            let itemId = element.item.itemId
-            let quantity = element.quantity
-
-            const baseDatos = getFirestore();
-            const itemCollection = baseDatos.collection("items");
-            const itemFirestore = itemCollection.doc(itemId);
-            itemFirestore.get().then((value) => {
-                let previousStock = value.data().stock
-                return itemFirestore.update({
-                    stock: previousStock - quantity
-                });
-            });
-        });
-    };
-
-    console.log(cart);
     
     return (
         <>
@@ -171,4 +152,4 @@ const CheckoutComponent = (elemento) => {
     )
 }
 
-export default CheckoutComponent;
+export default EnvioFormComponent;

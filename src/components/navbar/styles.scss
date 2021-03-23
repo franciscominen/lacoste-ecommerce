@@ -1,4 +1,5 @@
 $verdeLacoste: #00532c;
+$negroLacoste: #2C3330;
 
 .navbar.active {
     background-color: white;
@@ -18,14 +19,74 @@ $verdeLacoste: #00532c;
     height: 5em;
     padding: 10px 35px;
     transition: .3s;
+    @media (max-width: 768px) {
+        padding: 10px;
+        justify-content: center;
+    }
+
+    /* ///// RESPONSIVE MENU ////// */
+
+    .menuResponsive_btn {
+        display: none;
+        @media (max-width: 768px) {
+            display: flex;
+            position: absolute;
+            right: 9px;
+            top: 21px;
+            border: none;
+            background: transparent;
+            transition: opacity .3s;
+            .icon {
+                font-size: 25px;
+                color: $negroLacoste;
+            }
+        }
+    }
+
+    .closeResponsive_btn {
+        display: none;
+        @media (max-width: 768px) {
+            border: none;
+            background: transparent;
+            display: none;
+            position: absolute;
+            right: 9px;
+            top: 21px;
+            border: none;
+            background: transparent;
+
+            .icon {
+                font-size: 25px;
+                color: $negroLacoste;
+            }
+        }
+    }
     
     .categorias {
         display: flex;
         align-items: center;
         justify-content: center;
+        @media (max-width: 768px) {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 5em;
+            right: 0;
+            align-items: flex-end;
+            background: white;
+            padding: 20px 0;
+            width: 50%;
+            padding: 40px 0;
+            border-radius: 0px 0px 0 6px;
+            border-left: 2px solid $verdeLacoste;
+            border-bottom: 2px solid $verdeLacoste;
+        }
 
         li {
             margin: 12px 35px 0;
+            @media (max-width: 768px) {
+                margin: 15px 20px;
+            }
 
             .categoria {
                 font-weight: 300;
@@ -41,6 +102,11 @@ $verdeLacoste: #00532c;
                 &:hover {
                     border-bottom: 2px solid $verdeLacoste;
                     border-radius: 1px;
+                }
+                @media (max-width: 768px) {
+                    color: $verdeLacoste;
+                    font-weight: 500;
+                    font-size: 18px;
                 }
             }
 
@@ -67,29 +133,33 @@ $verdeLacoste: #00532c;
                 color: $verdeLacoste;
                 font-weight: 600;
             }
-
-            .searchIcon {
-                color: gray;
-                cursor: pointer;
-                transition: .3s;
-                &:hover {
-                    transform: scale(1.1);
-                    color: $verdeLacoste;
-                }
-            }
         }
     }
 
     .cartLogin {
         display: flex;
         align-items: center;
-
+        @media (max-width: 768px) {
+            position: absolute;
+            left: 1.5em;
+            
+        }
+        .dividerSpan {
+            @media (max-width: 768px){
+                display: none;
+            }
+        }
         a {
             margin: 0;
             color: gray;
             transition: .3s;
             &:hover {
                 color: $verdeLacoste;
+            }
+        }
+        .mapIcon, .loginIcon {
+            @media (max-width: 768px) {
+                display: none;
             }
         }
     }

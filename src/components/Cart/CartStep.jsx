@@ -1,19 +1,14 @@
-import React, {useContext} from 'react'
-import './step.scss';
-import { Icon, Step, Button } from 'semantic-ui-react'
-import {cartContext} from '../../context/CartContext';
-/* PROBAR useParams() */
+import React from 'react'
+import './styles/step.scss';
+import { Icon, Step } from 'semantic-ui-react'
 
-const CartStep = (item) => {
-
-    const { lista, actualizarTotal, removeItem, limpiarCarrito } = useContext(cartContext);
-    
+const CartStep = () => {    
     return (
         <>
             <section className="step_container">
                 <Step.Group>
 
-                    <Step className={window.location.href === "http://localhost:3000/cart" ? 'step active' : ''}> {/* PROBAR useParams()  */}
+                    <Step className={window.location.href === "http://localhost:3000/cart" ? 'step active' : ''}>
                             <Icon name='tag' />
                             <Step.Content>
                                 <Step.Title>Carrito de productos</Step.Title>
@@ -22,29 +17,28 @@ const CartStep = (item) => {
                         
                     </Step>
 
-
-                    <Step className={window.location.href === "http://localhost:3000/clientdata" ? 'step active' : ''}>
-                        <Icon name='edit' />
+                    <Step className={window.location.href === "http://localhost:3000/pago" ? 'step active' : ''}>
+                        <Icon name='dollar' />
                         <Step.Content>
-                            <Step.Title>Datos del cliente</Step.Title>
+                            <Step.Title>Medios de pago</Step.Title>
+                            <Step.Description>Envio, medios y formas de pago</Step.Description>
+                        </Step.Content>
+                    </Step>
+
+                    <Step className={window.location.href === "http://localhost:3000/clientform" ? 'step active' : ''}>
+                        <Icon name='dolly' />
+                        <Step.Content>
+                            <Step.Title>Datos y envio</Step.Title>
                             <Step.Description>Ingrese sus datos para confirmar compra</Step.Description>
                         </Step.Content>
                     </Step>
                     
-                    <Step className='step_pago'>
-                        <Icon name='dolly' />
-                        <Step.Content>
-                            <Step.Title>Pago y envio</Step.Title>
-                            <Step.Description>Envio, medios y formas de pago</Step.Description>
-                        </Step.Content>
-                    </Step>
+                    
 
                 </Step.Group>
             </section>
         </>
     )
 }
-
-console.log(CartStep)
 
 export default CartStep; 

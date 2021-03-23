@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import './style.scss'
 import { NavLink } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
@@ -21,10 +21,10 @@ const ItemDetail = ({ item }) => {
 
     return (
     <>
-        <div className='itemContainer' id="itemDetail" style={{margin:'80px 0'}}>
+        <div className='itemContainer' id="itemDetail">
                                         
             <div className='imagesContainer'>
-                <img src={item.img} style={{maxWidth:'500px'}}/>
+                <img src={item.img}/>
             </div>
 
             <div className='detailsContainer'>
@@ -98,19 +98,19 @@ const ItemDetail = ({ item }) => {
         <h1>Descripcion</h1>
         <p> REFERENCIA {item.reference}</p>
 
-        <div style={{display:'flex', justifyContent:'space-between', marginTop:'2em'}}>
-            <article style={{width:'30em'}}>
+        <div className="descriptionArticles_container">
+            <article>
                 <p>{item.description}</p>
             </article>
 
-            <article style={{width:'30em', margin:'0 40px'}}>
+            <article>
                 <h2>Envio y devoluciones</h2>
                 <h3>DEVOLUCION GRATIS</h3>
 
                 <p>Dispones de 1 mes para devolver tus artículos: con la etiqueta de devolución que encontrarás en tu cuenta. No se aceptan devoluciones en tiendas físicas ni outlets. Los artículos personalizados y la ropa interior no se pueden devolver.</p>
             </article>
 
-            <article style={{width:'30em'}}>
+            <article>
                 <h2>Envio estandar</h2>
                 <p>De acuerdo a las Medidas de Aislamiento Social Preventivo y Obligatorio que estamos enfrentando y con el fin de cuidar la salud de nuestros clientes y trabajadores, las compras realizadas del 18 al 31 de marzo se enviarán a partir del 01 de abril o hasta la fecha en la que el Gobierno Argentino deje sin efecto las medidas mencionadas.</p>
             </article>

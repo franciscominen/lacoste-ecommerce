@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import './style.scss';
-/* import {cartContext} from '../../context/CartContext' */
 
 const ItemCount = ({ onAdd, stock  }) => {
 
@@ -23,16 +22,16 @@ const ItemCount = ({ onAdd, stock  }) => {
 
   return (
     <>
-    <div>
-      <div className="buttonsCountContainer" s>
-        <button onClick={() => {decrementar()}} className="stockBtn"> - </button>
-        <p>{contador}</p>
-        <button onClick={() => {incrementar(stock)}} className="stockBtn"> + </button>
+      <div>
+        <div className="buttonsCountContainer" s>
+          <button onClick={() => {decrementar()}} className="stockBtn"> - </button>
+          <p>{contador}</p>
+          <button onClick={() => {incrementar(stock)}} className="stockBtn"> + </button>
+        </div>
+        <button onClick={handlerOnAdd} className="onAddBtn">
+          Agregar <img src={"/img/CartWidget/CartIconAlt.svg"} style={{maxWidth:'35px', marginLeft:'10px'}}/>
+        </button>
       </div>
-      <button onClick={handlerOnAdd} className="onAddBtn">
-        Agregar <img src={"/img/CartWidget/CartIconAlt.svg"} style={{maxWidth:'35px', marginLeft:'10px'}}/>
-      </button>
-    </div>
     </>
   )
 };

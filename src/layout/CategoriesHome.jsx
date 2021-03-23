@@ -3,7 +3,7 @@ import CarouselCategories from './CarouselCategories';
 import {Icon} from "semantic-ui-react";
 import {Link} from "react-scroll";
 import 'semantic-ui-css/semantic.min.css';
-import "./categories.scss";
+import "./styles/categories.scss";
 
 const CategoriesHome = () => {
     const [scrollTop, setScrollTop] = useState(false);
@@ -21,7 +21,7 @@ const CategoriesHome = () => {
         <>
             <section className='categoriesLayout_home' id='categoriesHome'>
 
-            <h1 className='title'>Encontrá tu look</h1>
+                <h1 className='title'>Encontrá tu look</h1>
 
                 <div className='cateogries_home'>
                     <div className='category_home'>
@@ -42,6 +42,7 @@ const CategoriesHome = () => {
                         <Link className='link_btn'>POLOS</Link> 
                     </div>
                 </div>
+                
             </section>
 
             <Link className={scrollTop ? 'backToTop active' : 'backToTop'} smooth={true} duration={600} to="home">

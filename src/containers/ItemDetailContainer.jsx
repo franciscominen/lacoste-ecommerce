@@ -35,10 +35,12 @@ const ItemDetailContainer = () => {
           <img src="/img/Loaders/loader.gif" alt="Cargando..." style={{maxWidth:'180px'}}/> 
         </div>
       : 
-      <>
-      <ItemDetail item={item}/> 
-      <Footer/>
-      </>
+        <>
+          <ItemDetail item={item}/>
+          <>
+            <Footer/>
+          </>
+        </>
       } 
     </> 
   )

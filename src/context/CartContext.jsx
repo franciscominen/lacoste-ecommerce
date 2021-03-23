@@ -1,7 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 
 export const cartContext = createContext();
-
 export const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
@@ -45,7 +44,7 @@ export const CartProvider = ({ children }) => {
             const l = [ ...cart, { item: newItem, quantity } ]
             setCart(l)
         } else {
-            const newQuantity = cart[idx].quantity + quantity
+            const newQuantity = cart[idx].quantity + quantity;
             const oldI = cart.filter((oldI) => oldI.item.id !== cart[idx].item.id)
             const l = [...oldI, { item: cart[idx].item, quantity: newQuantity }]
             setCart(l)

@@ -1,8 +1,8 @@
 import React from 'react';
-import "./carousel.scss";
+import "./styles/carousel.scss";
 import { Button, Icon } from 'semantic-ui-react';
+import { Link } from "react-router-dom";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-
 
 const CarouselCategories = () => {
     return (
@@ -24,7 +24,9 @@ const CarouselCategories = () => {
                             <div className='descrip'>
                                 <h3>COLECCION SELECCIONADA</h3>
                                 <h2>Coleccion para hombres</h2>
-                                <Button>Descubrir<Icon name='arrow right'/></Button>
+                                <Link to={`/categories/${'hombre'}`} >
+                                    <Button>Descubrir<Icon name='arrow right'/></Button>
+                                </Link>
                             </div>
                         </div>
                     </Slide>
@@ -34,7 +36,9 @@ const CarouselCategories = () => {
                             <div className='descrip'>
                                 <h3>COLECCION SELECCIONADA</h3>
                                 <h2>Coleccion para mujeres</h2>
-                                <Button>Descubrir<Icon name='arrow right'/></Button>
+                                <Link to={`/categories/${'mujer'}`} >
+                                    <Button>Descubrir<Icon name='arrow right'/></Button>
+                                </Link>
                             </div>
                         </div>
                     </Slide>
@@ -44,7 +48,9 @@ const CarouselCategories = () => {
                             <div className='descrip'>
                                 <h3>COLECCION SELECCIONADA</h3>
                                 <h2>Coleccion para niños</h2>
-                                <Button>Descubrir<Icon name='arrow right'/></Button>
+                                <Link to={`/categories/${'kids'}`} >
+                                    <Button>Descubrir<Icon name='arrow right'/></Button>
+                                </Link>
                             </div>
                         </div>
                     </Slide>

@@ -1,5 +1,5 @@
 import React from 'react';
-import "./styles.scss"
+import "./styles/styles.scss"
 import { Input, Icon, Button, Divider } from 'semantic-ui-react';
 
 const Footer = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-import "./styles.scss";
+import "./styles/styles.scss";
 import FadeIn from 'react-fade-in';
 import { Icon } from 'semantic-ui-react';
 import Footer from './Footer';
@@ -14,12 +14,11 @@ const Home = () => {
 
     return (
         <FadeIn>
-            
         <section className='home_container' id='home'>
 
             <video autoPlay="autoplay" loop="loop" muted className="video">
                 <source src={videoSource}/>
-            </video>
+            </video> 
             
             <div className="title_container">
                 <h1 className='home_title'>New horizons</h1>

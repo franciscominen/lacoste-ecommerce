@@ -3,15 +3,21 @@ $negroLacoste: #2C3330;
 
 .tittleContainer {
     margin: 3em 7em;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        margin: 0 0 30px 0;
+        align-items: flex-start;
+    }
 
     .categoryTittle {
         font-size: 50px;
         font-weight: 500;
         color: $negroLacoste;
+        @media (max-width: 768px) {
+            font-size: 36px;
+        }
     }  
 
     .volverCatalogoBtn {
@@ -24,6 +30,20 @@ $negroLacoste: #2C3330;
         &:hover {
             color: white;
             background-color: $verdeLacoste;
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+    .volverCatalogoBtn_mobile {
+        display: none;
+        @media (max-width: 768px) {
+            display: flex;
+            position: relative;
+            right: -2px;
+            top: 20px;
+            font-size: 26px;
+            color: $verdeLacoste;
         }
     }
 }

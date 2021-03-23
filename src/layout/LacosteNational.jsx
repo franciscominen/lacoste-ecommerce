@@ -1,6 +1,5 @@
 import React from 'react';
-import {Button} from 'semantic-ui-react';
-import "./categories.scss"
+import "./styles/categories.scss";
 
 const LacosteNational = () => {
 
@@ -23,9 +22,7 @@ const LacosteNational = () => {
 
                 <p>Cuatro especies increíbles se encuentran con el cocodrilo: Lacoste y National Geographic se unen para celebrar la belleza de la naturaleza y sus habitantes.</p>
 
-                <Button>
-                    Descubrir
-                </Button>
+                <a className='descubirir_btn' href="https://www.nationalgeographic.com.es/" target="_blank">Descubrir</a> 
             </div>
             
         </section>
