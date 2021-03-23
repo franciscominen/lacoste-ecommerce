@@ -2,7 +2,7 @@
 ![Lacoste logo](https://www.viamoda.ad/wp-content/uploads/2020/10/Logo-Lacoste.jpg)
 
 ---
-### ECOMMERCE Project in ReactJs
+# ECOMMERCE Project in ReactJs
 
 This project was developed for the ReactJs course on the CoderHouse platform [![coderhouse](https://emprelatam.com/wp-content/uploads/2019/10/logos-coderhouse-01.png)](https://www.coderhouse.com/)
 
@@ -11,21 +11,21 @@ This project was developed for the ReactJs course on the CoderHouse platform [![
 ![](https://i.postimg.cc/xC234Pmm/Frame-1.png)
 
 
-#### Info
+## Info
 
 Project based on Lacoste brand eCommerce, developed in React Js, with the main objective of beginning to understand the different functionalities of the library and take advantage of the great advantages it offers for the development of web applications.
 
-#### GIFs
+## GIFs
 > [Google Drive](https://drive.google.com/drive/folders/1fXp0bq4bp06q5merZjh5XnhkpW8-9bO8?usp=sharing) for download
 
-$~~~~~~~~~$
-#### Author
+
+## Author
 
 > Francisco J. Minen
 > Contact: fran.minen@gmail.com > [linkedin](https://www.linkedin.com/in/franciscominen/)
 
-$~~~~~~~~~$
-#### Main libraries used in the project
+
+## Main libraries used in the project
 
 | Library                                                          | Used                      |
 | ---------------------------------------------------------------- | ------------------------- |
@@ -38,8 +38,8 @@ $~~~~~~~~~$
 | [React Router](https://reactrouter.com/)                         | Router                    |
 | [React Scroll](https://www.npmjs.com/package/react-scroll)                               | Component for animating vertical scrolling |
 
-$~~~~~~~~~$
-#### Install Project Instructions
+
+## Install Project Instructions
 
 in your terminal:
 
@@ -51,40 +51,40 @@ in your terminal:
 	// Open your browser in https://localhost:3000
 ```
 
-$~~~~~~~~~$
-#### Aspects to be developed in the future
+
+## Aspects to be developed in the future
 - Develop login for the user where their purchases and wish list are stored.
 - Real operation of the payment methods.
 - Store the size and color selected by the user.
 - Mobile menu transition.
 $~~~~~~~~~$
 ---
-### Learn More
+## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-#### Code Splitting
+### Code Splitting
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-#### Analyzing the Bundle Size
+### Analyzing the Bundle Size
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-#### Making a Progressive Web App
+### Making a Progressive Web App
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-#### Advanced Configuration
+### Advanced Configuration
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-#### Deployment
+### Deployment
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-#### `npm run build` fails to minify
+### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
