@@ -57,7 +57,7 @@ in your terminal:
 - Real operation of the payment methods.
 - Store the size and color selected by the user.
 - Mobile menu transition.
-$~~~~~~~~~$
+
 ---
 ## Learn More
 
